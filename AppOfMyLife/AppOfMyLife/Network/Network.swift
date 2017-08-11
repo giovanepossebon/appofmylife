@@ -20,12 +20,11 @@ class Network {
     
     //MARK: public
     
-    class func request(_ url: URL, method: NetworkMethod = .get, parameters: [String: Any]? = nil, headers: [String: String]? = nil, log: Bool = true, completion: @escaping (DataResponse<Any>) -> Void) {
+    class func request(_ url: URL, method: NetworkMethod = .get, parameters: [String: Any]? = nil, log: Bool = true, completion: @escaping (DataResponse<Any>) -> Void) {
         
         let alamofireMethod = HTTPMethod.init(rawValue: method.rawValue) ?? .get
         
-        
-        Alamofire.request(url, method: alamofireMethod, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
+        Alamofire.request(url, method: alamofireMethod, parameters: parameters, encoding: JSONEncoding.default, headers: defaultHeaders()).responseJSON(completionHandler: { response in
             
             if log {
                 logAlamofireRequest(response: response)
@@ -33,6 +32,18 @@ class Network {
             
             completion(response)
         })
+    }
+    
+    private class func defaultHeaders() -> [String: String] {
+        
+        let headers: [String: String] = [
+            "Content-Type":"application/json",
+            "Authorization": "Bearer \(UserSession.shared.accessToken)",
+            "trakt-api-version": "2",
+            "trakt-api-key": TraktAPI.clientId
+        ]
+        
+        return headers
     }
     
     private class func logAlamofireRequest(response: DataResponse<Any>) {

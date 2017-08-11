@@ -9,19 +9,19 @@
 import Foundation
 import Alamofire
 
-public struct Response<T> {
+struct Response<T> {
     var data: T?
     let result: Result
 }
 
-public enum Result {
+enum Result {
     case success
     case error(message: String)
 }
 
 struct LoginService {
     
-    static let BASE_URL = "https://api.trakt.tv/"
+    static let BASE_URL = TraktAPI.URLs.baseURL
     
     static func getToken(code: String, callback: @escaping (Response<Auth>) -> ()) {
         let params = [
@@ -51,4 +51,5 @@ struct LoginService {
             }
         }
     }
+    
 }

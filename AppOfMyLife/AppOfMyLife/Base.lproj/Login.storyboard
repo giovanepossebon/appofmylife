@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,9 +22,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvl-0T-DHd">
-                                <rect key="frame" x="168" y="318" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="NUK-SU-UMJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90j-Jp-AfT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvl-0T-DHd">
+                                <rect key="frame" x="58" y="558" width="259" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="vCn-gk-dKh"/>
+                                </constraints>
+                                <state key="normal" image="loginButtonBackground"/>
                                 <connections>
                                     <action selector="didTouchLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZFg-nB-68Z"/>
                                 </connections>
@@ -31,8 +42,17 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Dvl-0T-DHd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0F7-et-ZrL"/>
-                            <constraint firstItem="Dvl-0T-DHd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QMF-M7-XjZ"/>
+                            <constraint firstItem="90j-Jp-AfT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1bW-gC-pF3"/>
+                            <constraint firstAttribute="trailing" secondItem="NUK-SU-UMJ" secondAttribute="trailing" id="AUg-56-z8J"/>
+                            <constraint firstItem="90j-Jp-AfT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NKR-Td-bHm"/>
+                            <constraint firstAttribute="trailing" secondItem="90j-Jp-AfT" secondAttribute="trailing" id="PSU-UK-ry5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NUK-SU-UMJ" secondAttribute="bottom" id="VwF-KL-Ods"/>
+                            <constraint firstItem="NUK-SU-UMJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WpQ-WR-0AE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dvl-0T-DHd" secondAttribute="trailing" constant="42" id="bvR-iE-e5c"/>
+                            <constraint firstItem="NUK-SU-UMJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="edj-BV-8Qg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="90j-Jp-AfT" secondAttribute="bottom" id="ibv-Qd-91M"/>
+                            <constraint firstItem="Dvl-0T-DHd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="42" id="ido-d2-LzB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dvl-0T-DHd" secondAttribute="bottom" constant="30" id="kaw-Af-hQS"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -41,4 +61,8 @@
             <point key="canvasLocation" x="116" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="loginBackground" width="321" height="570"/>
+        <image name="loginButtonBackground" width="259" height="79"/>
+    </resources>
 </document>

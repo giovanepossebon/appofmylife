@@ -9,6 +9,12 @@
 import UIKit
 import SafariServices
 
+protocol LoginView: class {
+    func didStartLogin(withUrl url: URL)
+    func didLoginSuccessfully()
+    func errorOnLogin(error: String)
+}
+
 class LoginViewController: UIViewController {
     
     var presenter: LoginPresenter?
@@ -36,7 +42,7 @@ extension LoginViewController: LoginView {
     
     func didLoginSuccessfully() {
         safariViewController?.dismiss(animated: true, completion: { 
-            print("navigate")
+            self.navigateToHomeViewController()
         })
     }
     
@@ -44,6 +50,12 @@ extension LoginViewController: LoginView {
         print(error)
     }
     
+    private func navigateToHomeViewController() {
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let mainTabBarController = mainStoryBoard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController {
+            present(mainTabBarController, animated: true, completion: nil)
+        }
+    }
 }
 
 extension LoginViewController: SFSafariViewControllerDelegate {
