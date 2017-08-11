@@ -9,6 +9,11 @@
 import Foundation
 import SafariServices
 
+protocol LoginViewPresenter {
+    init(view: LoginView)
+    func login()
+}
+
 class LoginPresenter: LoginViewPresenter {
     unowned let view: LoginView
     

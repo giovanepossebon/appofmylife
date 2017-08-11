@@ -17,5 +17,6 @@ struct TraktAPI {
     struct URLs {
         static let loginURL: URL? = URL(string: String(format: "https://trakt.tv/oauth/authorize?response_type=%@&client_id=%@&redirect_uri=%@", responseType, clientId, redirectUri))
         static let authURL = "https://api.trakt.tv/oauth/token"
+        static let baseURL = "https://api.trakt.tv/"
     }
 }
