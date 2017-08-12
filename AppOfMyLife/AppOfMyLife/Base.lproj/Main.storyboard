@@ -23,6 +23,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hWR-uE-Ht6" kind="relationship" relationship="viewControllers" id="lZG-az-XYd"/>
+                        <segue destination="zrJ-Dq-q3A" kind="relationship" relationship="viewControllers" id="a9d-hF-0gk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwV-GT-jsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -30,10 +31,41 @@
             <point key="canvasLocation" x="-879" y="-230"/>
         </scene>
         <!--Home-->
+        <scene sceneID="wBB-Xe-KiK">
+            <objects>
+                <navigationController id="zrJ-Dq-q3A" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="icHome" id="qz3-kp-vzb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lRV-Bl-q5U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.30196078430000001" green="0.1960784314" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XnF-Nb-8eC" kind="relationship" relationship="rootViewController" id="uQ0-33-Wh0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tNM-qH-l2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-50" y="13"/>
+        </scene>
+        <!--Collection-->
+        <scene sceneID="FgE-go-DjQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Collection" id="XnF-Nb-8eC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Mjw-b6-8UG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vUr-TU-pgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="682" y="12"/>
+        </scene>
+        <!--Schedule-->
         <scene sceneID="n3j-0l-zUC">
             <objects>
                 <navigationController id="hWR-uE-Ht6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="icHome" id="ohJ-da-j5K"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" id="ohJ-da-j5K"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="R5f-sS-ozd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
