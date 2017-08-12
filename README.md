@@ -6,7 +6,7 @@
 - [x] Home (Next episodes from my series)
 - [x] TV show percentage completion
 - [x] List of my series
-- [ ] Episode informations
+- [x] Episode informations
 - [ ] Mark episode as watched
 - [ ] Profile
 - [ ] Search
