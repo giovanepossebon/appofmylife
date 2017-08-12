@@ -37,6 +37,13 @@
 		9F7763F61F3E922300E9E885 /* DateExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763F51F3E922300E9E885 /* DateExtensionTest.swift */; };
 		9F7763F81F3E985500E9E885 /* NextEpisodeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763F71F3E985500E9E885 /* NextEpisodeSection.swift */; };
 		9F7763FA1F3E987700E9E885 /* NextEpisodeSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F7763F91F3E987700E9E885 /* NextEpisodeSection.xib */; };
+		9F7763FE1F3EA03400E9E885 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763FD1F3EA03400E9E885 /* CollectionViewController.swift */; };
+		9F7764001F3EA06900E9E885 /* CollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763FF1F3EA06900E9E885 /* CollectionPresenter.swift */; };
+		9F7764021F3EA18F00E9E885 /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7764011F3EA18F00E9E885 /* CollectionService.swift */; };
+		9F7764051F3EA38200E9E885 /* Collection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7764031F3EA38200E9E885 /* Collection.storyboard */; };
+		9F7764081F3EA49900E9E885 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7764071F3EA49900E9E885 /* Collection.swift */; };
+		9F77640B1F3EAD9200E9E885 /* CollectionItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F77640A1F3EAD9200E9E885 /* CollectionItemCell.xib */; };
+		9F77640D1F3EAE7100E9E885 /* CollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F77640C1F3EAE7100E9E885 /* CollectionItemCell.swift */; };
 		A7C489677A635A76331792BF /* Pods_AppOfMyLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DE1CC97A86AC3A7194E45D /* Pods_AppOfMyLife.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +106,13 @@
 		9F7763F51F3E922300E9E885 /* DateExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensionTest.swift; path = Extensions/DateExtensionTest.swift; sourceTree = "<group>"; };
 		9F7763F71F3E985500E9E885 /* NextEpisodeSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NextEpisodeSection.swift; path = Home/Cells/NextEpisodeSection.swift; sourceTree = "<group>"; };
 		9F7763F91F3E987700E9E885 /* NextEpisodeSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NextEpisodeSection.xib; path = Home/Cells/NextEpisodeSection.xib; sourceTree = "<group>"; };
+		9F7763FD1F3EA03400E9E885 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewController.swift; path = Collection/CollectionViewController.swift; sourceTree = "<group>"; };
+		9F7763FF1F3EA06900E9E885 /* CollectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionPresenter.swift; path = Collection/CollectionPresenter.swift; sourceTree = "<group>"; };
+		9F7764011F3EA18F00E9E885 /* CollectionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionService.swift; path = API/CollectionService.swift; sourceTree = "<group>"; };
+		9F7764041F3EA38200E9E885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Collection.storyboard; sourceTree = "<group>"; };
+		9F7764071F3EA49900E9E885 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Collection.swift; path = Model/Collection.swift; sourceTree = "<group>"; };
+		9F77640A1F3EAD9200E9E885 /* CollectionItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollectionItemCell.xib; path = Collection/Cells/CollectionItemCell.xib; sourceTree = "<group>"; };
+		9F77640C1F3EAE7100E9E885 /* CollectionItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionItemCell.swift; path = Collection/Cells/CollectionItemCell.swift; sourceTree = "<group>"; };
 		B0DE1CC97A86AC3A7194E45D /* Pods_AppOfMyLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppOfMyLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C348FD596B806B49597D388B /* Pods-AppOfMyLifeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppOfMyLifeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppOfMyLifeUITests/Pods-AppOfMyLifeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +177,7 @@
 				9F7763EA1F3D462D00E9E885 /* Show.swift */,
 				9F7763EC1F3D467500E9E885 /* ExternalID.swift */,
 				9F7763F21F3D49EA00E9E885 /* Schedule.swift */,
+				9F7764071F3EA49900E9E885 /* Collection.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -192,14 +207,13 @@
 		9F3AEFF61F3A9B5C00EAE651 /* AppOfMyLife */ = {
 			isa = PBXGroup;
 			children = (
+				9F7764061F3EA38900E9E885 /* Scenes */,
 				9F7763FB1F3E98EC00E9E885 /* CustomCells */,
 				9F7763CF1F3D33B300E9E885 /* Storyboards */,
 				9F12A8A71F3BEB8E00180307 /* Model */,
 				9F4331351F3AC0CD00BA4331 /* API */,
 				9F4331321F3ABEEC00BA4331 /* Network */,
 				9F43312F1F3AB7C800BA4331 /* Extension */,
-				9F43311F1F3AB01D00BA4331 /* Login */,
-				9F7763D61F3D389500E9E885 /* Home */,
 				9F3AEFF71F3A9B5C00EAE651 /* AppDelegate.swift */,
 				9F3AEFFE1F3A9B5C00EAE651 /* Assets.xcassets */,
 				9F3AF0001F3A9B5C00EAE651 /* LaunchScreen.storyboard */,
@@ -258,6 +272,7 @@
 				9F4331361F3AC0E700BA4331 /* TraktAPI.swift */,
 				9F12A8A51F3BE84300180307 /* LoginService.swift */,
 				9F7763EE1F3D47FB00E9E885 /* HomeService.swift */,
+				9F7764011F3EA18F00E9E885 /* CollectionService.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -268,6 +283,7 @@
 				9F3AEFFB1F3A9B5C00EAE651 /* Login.storyboard */,
 				9F7763D01F3D33F300E9E885 /* Main.storyboard */,
 				9F7763D31F3D346400E9E885 /* Home.storyboard */,
+				9F7764031F3EA38200E9E885 /* Collection.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -306,6 +322,35 @@
 				9F7763F91F3E987700E9E885 /* NextEpisodeSection.xib */,
 			);
 			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		9F7763FC1F3E9FFD00E9E885 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				9F7764091F3EAD7200E9E885 /* Cells */,
+				9F7763FD1F3EA03400E9E885 /* CollectionViewController.swift */,
+				9F7763FF1F3EA06900E9E885 /* CollectionPresenter.swift */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
+		9F7764061F3EA38900E9E885 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9F43311F1F3AB01D00BA4331 /* Login */,
+				9F7763D61F3D389500E9E885 /* Home */,
+				9F7763FC1F3E9FFD00E9E885 /* Collection */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		9F7764091F3EAD7200E9E885 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9F77640A1F3EAD9200E9E885 /* CollectionItemCell.xib */,
+				9F77640C1F3EAE7100E9E885 /* CollectionItemCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,8 +469,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F7764051F3EA38200E9E885 /* Collection.storyboard in Resources */,
 				9F7763DD1F3D393F00E9E885 /* NextEpisodeCell.xib in Resources */,
 				9F3AF0021F3A9B5C00EAE651 /* LaunchScreen.storyboard in Resources */,
+				9F77640B1F3EAD9200E9E885 /* CollectionItemCell.xib in Resources */,
 				9F7763D51F3D346400E9E885 /* Home.storyboard in Resources */,
 				9F3AEFFF1F3A9B5C00EAE651 /* Assets.xcassets in Resources */,
 				9F3AEFFD1F3A9B5C00EAE651 /* Login.storyboard in Resources */,
@@ -596,19 +643,24 @@
 				9F7763F81F3E985500E9E885 /* NextEpisodeSection.swift in Sources */,
 				9F43313B1F3AC59100BA4331 /* LoginPresenter.swift in Sources */,
 				9F7763E91F3D453400E9E885 /* UserCredential.swift in Sources */,
+				9F7764021F3EA18F00E9E885 /* CollectionService.swift in Sources */,
 				9F7763F31F3D49EA00E9E885 /* Schedule.swift in Sources */,
 				9F12A8AB1F3BEBC800180307 /* UserSession.swift in Sources */,
 				9F4331341F3ABEFB00BA4331 /* Network.swift in Sources */,
+				9F7764081F3EA49900E9E885 /* Collection.swift in Sources */,
 				9F4331371F3AC0E700BA4331 /* TraktAPI.swift in Sources */,
 				9F12A8A61F3BE84300180307 /* LoginService.swift in Sources */,
 				9F7763E71F3D43A500E9E885 /* Episode.swift in Sources */,
 				9F4331391F3AC49900BA4331 /* LoginViewController.swift in Sources */,
 				9F7763E51F3D429A00E9E885 /* HomePresenter.swift in Sources */,
 				9F7763F11F3D48D300E9E885 /* DateExtension.swift in Sources */,
+				9F7763FE1F3EA03400E9E885 /* CollectionViewController.swift in Sources */,
 				9F7763EF1F3D47FB00E9E885 /* HomeService.swift in Sources */,
 				9F7763D81F3D38CA00E9E885 /* HomeViewController.swift in Sources */,
 				9F7763EB1F3D462D00E9E885 /* Show.swift in Sources */,
+				9F7764001F3EA06900E9E885 /* CollectionPresenter.swift in Sources */,
 				9F7763ED1F3D467500E9E885 /* ExternalID.swift in Sources */,
+				9F77640D1F3EAE7100E9E885 /* CollectionItemCell.swift in Sources */,
 				9F7763DB1F3D391A00E9E885 /* NextEpisodeCell.swift in Sources */,
 				9F3AEFF81F3A9B5C00EAE651 /* AppDelegate.swift in Sources */,
 			);
@@ -677,6 +729,14 @@
 				9F7763D41F3D346400E9E885 /* Base */,
 			);
 			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		9F7764031F3EA38200E9E885 /* Collection.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F7764041F3EA38200E9E885 /* Base */,
+			);
+			name = Collection.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -780,6 +840,7 @@
 			baseConfigurationReference = 1ED3DBA105635DBD1E54B477 /* Pods-AppOfMyLife.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppOfMyLife/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.giovane.AppOfMyLife;
@@ -793,6 +854,7 @@
 			baseConfigurationReference = 27B7CFE493B0571E28AC8910 /* Pods-AppOfMyLife.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppOfMyLife/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.giovane.AppOfMyLife;

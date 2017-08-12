@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class NextEpisodeCell: UITableViewCell {
     
@@ -29,6 +30,9 @@ class NextEpisodeCell: UITableViewCell {
             labelHour.text = time.ISOHourFormatted()
         }
         
-        imgBackground.image = UIImage(named: "loginBackground")
+        if let tvdbId = schedule.show?.ids?.tvdb, let url = URL(string: ShowBannerStyle.landscape(id: tvdbId).url) {
+            imgBackground.af_setImage(withURL: url)
+        }
+        
     }
 }

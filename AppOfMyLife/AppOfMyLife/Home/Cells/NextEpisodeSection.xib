@@ -31,12 +31,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Bl1-Ha-Xdk" secondAttribute="trailing" constant="17" id="1tb-MF-WAL"/>
-                    <constraint firstItem="Bl1-Ha-Xdk" firstAttribute="centerX" secondItem="D54-ar-MaW" secondAttribute="centerX" id="3Fg-VR-yP3"/>
                     <constraint firstAttribute="bottom" secondItem="cCC-DK-ssD" secondAttribute="bottom" id="ARQ-tV-e9c"/>
                     <constraint firstAttribute="trailing" secondItem="cCC-DK-ssD" secondAttribute="trailing" id="Lex-Wj-9Uz"/>
-                    <constraint firstItem="Bl1-Ha-Xdk" firstAttribute="centerY" secondItem="D54-ar-MaW" secondAttribute="centerY" id="QYG-Qf-CgQ"/>
+                    <constraint firstItem="Bl1-Ha-Xdk" firstAttribute="top" secondItem="D54-ar-MaW" secondAttribute="top" constant="6" id="Vc5-3F-SmM"/>
                     <constraint firstItem="cCC-DK-ssD" firstAttribute="leading" secondItem="D54-ar-MaW" secondAttribute="leading" id="Yq6-5d-GmA"/>
                     <constraint firstItem="cCC-DK-ssD" firstAttribute="top" secondItem="D54-ar-MaW" secondAttribute="top" id="cbx-yV-bX9"/>
+                    <constraint firstAttribute="bottom" secondItem="Bl1-Ha-Xdk" secondAttribute="bottom" constant="4.5" id="g37-YE-dll"/>
                     <constraint firstItem="Bl1-Ha-Xdk" firstAttribute="leading" secondItem="D54-ar-MaW" secondAttribute="leading" constant="16" id="jCu-9z-t2G"/>
                 </constraints>
             </tableViewCellContentView>

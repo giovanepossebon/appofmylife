@@ -9,6 +9,10 @@
 import Foundation
 import ObjectMapper
 
+enum ExternalService: String {
+    case tvdb = "tvdb"
+}
+
 struct ExternalID: Mappable {
     var trakt: Int?
     var slug: String?
