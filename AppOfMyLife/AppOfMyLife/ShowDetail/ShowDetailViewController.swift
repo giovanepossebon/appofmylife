@@ -12,13 +12,16 @@ private enum DetailRows: Int {
     case image
     case description
     case progress
+    case nextEpisodeHeader
+    case nextEpisode
     
-    static let count = DetailRows.progress.hashValue + 1
+    static let count = DetailRows.nextEpisode.hashValue + 1
 }
 
 protocol ShowDetailView: class {
     func onShowDetailLoaded(showDetail: Show)
     func onShowProgressLoaded(showProgress: Progress)
+    func onNextEpisodeLoaded(nextEpisode: Episode)
     func onError(error: String)
 }
 
@@ -27,7 +30,6 @@ class ShowDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: ShowDetailViewPresenter?
-    
     var show: Show!
     
     var showDetail: Show? {
@@ -42,6 +44,12 @@ class ShowDetailViewController: UIViewController {
         }
     }
     
+    var nextEpisode: Episode? {
+        didSet {
+            reloadTableView(forDetailRow: .nextEpisode)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -51,12 +59,15 @@ class ShowDetailViewController: UIViewController {
         presenter = ShowDetailPresenter(view: self)
         presenter?.loadShowDetail(fromShow: show)
         presenter?.loadShowProgress(fromShow: show)
+        presenter?.loadNextEpisode(fromShow: show)
     }
     
     private func setupTableView() {
         tableView.register(UINib(nibName: ImageCell.nibName, bundle: nil), forCellReuseIdentifier: ImageCell.identifier)
         tableView.register(UINib(nibName: DescriptionCell.nibName, bundle: nil), forCellReuseIdentifier: DescriptionCell.identifier)
         tableView.register(UINib(nibName: ProgressCell.nibName, bundle: nil), forCellReuseIdentifier: ProgressCell.identifier)
+        tableView.register(UINib(nibName: TitleWithAccessoryCell.nibName, bundle: nil), forCellReuseIdentifier: TitleWithAccessoryCell.identifier)
+        tableView.register(UINib(nibName: TitleHeaderSection.nibName, bundle: nil), forCellReuseIdentifier: TitleHeaderSection.identifier)
         tableView.separatorStyle = .none
     }
     
@@ -74,6 +85,10 @@ extension ShowDetailViewController: ShowDetailView {
     
     func onShowProgressLoaded(showProgress: Progress) {
         self.showProgress = showProgress
+    }
+    
+    func onNextEpisodeLoaded(nextEpisode: Episode) {
+        self.nextEpisode = nextEpisode
     }
     
     func onError(error: String) {
@@ -119,6 +134,23 @@ extension ShowDetailViewController: UITableViewDataSource {
                 
                 return cell
             }
+        case .nextEpisodeHeader:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: TitleHeaderSection.identifier, for: indexPath) as? TitleHeaderSection {
+                cell.labelTitle.text = "Next episode..."
+                
+                return cell
+            }
+        case .nextEpisode:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: TitleWithAccessoryCell.identifier, for: indexPath) as? TitleWithAccessoryCell {
+                
+                if nextEpisode == nil {
+                    cell.populate(withTitle: "There's no new episodes", withAccessoryType: .none, enabled: false)
+                } else {
+                    cell.populate(withTitle: nextEpisode?.formattedEpisodeName() ?? "", withAccessoryType: .disclosureIndicator)
+                }
+                
+                return cell
+            }
         }
         
         return UITableViewCell()
@@ -127,6 +159,16 @@ extension ShowDetailViewController: UITableViewDataSource {
 }
 
 extension ShowDetailViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == DetailRows.nextEpisode.hashValue {
+            if let nextEpisode = nextEpisode, let episodeDetailViewController = storyboard?.instantiateViewController(withIdentifier: "EpisodeDetailViewController") as? EpisodeDetailViewController {
+                episodeDetailViewController.episode = nextEpisode
+                episodeDetailViewController.show = show
+                navigationController?.pushViewController(episodeDetailViewController, animated: true)
+            }
+        }
+    }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let rowType = DetailRows(rawValue: indexPath.row) else {
@@ -140,6 +182,10 @@ extension ShowDetailViewController: UITableViewDelegate {
             return DescriptionCell.height
         case .progress:
             return ProgressCell.height
+        case .nextEpisodeHeader:
+            return TitleHeaderSection.height
+        case .nextEpisode:
+            return TitleWithAccessoryCell.height
         }
     }
     

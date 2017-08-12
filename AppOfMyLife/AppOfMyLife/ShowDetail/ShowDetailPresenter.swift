@@ -12,6 +12,7 @@ protocol ShowDetailViewPresenter {
     init(view: ShowDetailView)
     func loadShowDetail(fromShow show: Show)
     func loadShowProgress(fromShow show: Show)
+    func loadNextEpisode(fromShow show: Show)
 }
 
 class ShowDetailPresenter: ShowDetailViewPresenter {
@@ -47,6 +48,22 @@ class ShowDetailPresenter: ShowDetailViewPresenter {
                 }
                 
                 self.view.onShowProgressLoaded(showProgress: progress)
+            case .error(message: let error):
+                self.view.onError(error: error)
+            }
+        }
+    }
+    
+    func loadNextEpisode(fromShow show: Show) {
+        ShowDetailService.getNextEpisode(forShow: show) { response in
+            switch response.result {
+            case .success:
+                guard let nextEpisode = response.data else {
+                    self.view.onError(error: "Failed to load show detail")
+                    return
+                }
+                
+                self.view.onNextEpisodeLoaded(nextEpisode: nextEpisode)
             case .error(message: let error):
                 self.view.onError(error: error)
             }

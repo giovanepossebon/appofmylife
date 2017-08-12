@@ -9,10 +9,10 @@
 import UIKit
 import AlamofireImage
 
-class NextEpisodeCell: UITableViewCell {
+class ScheduleCell: UITableViewCell {
     
-    static let identifier = "NextEpisodeCell"
-    static let nibName = "NextEpisodeCell"
+    static let identifier = "ScheduleCell"
+    static let nibName = "ScheduleCell"
     static let height: CGFloat = 135.0
     
     @IBOutlet weak var imgBackground: UIImageView!
