@@ -34,6 +34,9 @@
 		9F7763EF1F3D47FB00E9E885 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763EE1F3D47FB00E9E885 /* HomeService.swift */; };
 		9F7763F11F3D48D300E9E885 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763F01F3D48D300E9E885 /* DateExtension.swift */; };
 		9F7763F31F3D49EA00E9E885 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763F21F3D49EA00E9E885 /* Schedule.swift */; };
+		9F7763F61F3E922300E9E885 /* DateExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763F51F3E922300E9E885 /* DateExtensionTest.swift */; };
+		9F7763F81F3E985500E9E885 /* NextEpisodeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763F71F3E985500E9E885 /* NextEpisodeSection.swift */; };
+		9F7763FA1F3E987700E9E885 /* NextEpisodeSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F7763F91F3E987700E9E885 /* NextEpisodeSection.xib */; };
 		A7C489677A635A76331792BF /* Pods_AppOfMyLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DE1CC97A86AC3A7194E45D /* Pods_AppOfMyLife.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +96,9 @@
 		9F7763EE1F3D47FB00E9E885 /* HomeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeService.swift; path = API/HomeService.swift; sourceTree = "<group>"; };
 		9F7763F01F3D48D300E9E885 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = Extensions/DateExtension.swift; sourceTree = "<group>"; };
 		9F7763F21F3D49EA00E9E885 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = Model/Schedule.swift; sourceTree = "<group>"; };
+		9F7763F51F3E922300E9E885 /* DateExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensionTest.swift; path = Extensions/DateExtensionTest.swift; sourceTree = "<group>"; };
+		9F7763F71F3E985500E9E885 /* NextEpisodeSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NextEpisodeSection.swift; path = Home/Cells/NextEpisodeSection.swift; sourceTree = "<group>"; };
+		9F7763F91F3E987700E9E885 /* NextEpisodeSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NextEpisodeSection.xib; path = Home/Cells/NextEpisodeSection.xib; sourceTree = "<group>"; };
 		B0DE1CC97A86AC3A7194E45D /* Pods_AppOfMyLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppOfMyLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C348FD596B806B49597D388B /* Pods-AppOfMyLifeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppOfMyLifeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppOfMyLifeUITests/Pods-AppOfMyLifeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +192,7 @@
 		9F3AEFF61F3A9B5C00EAE651 /* AppOfMyLife */ = {
 			isa = PBXGroup;
 			children = (
+				9F7763FB1F3E98EC00E9E885 /* CustomCells */,
 				9F7763CF1F3D33B300E9E885 /* Storyboards */,
 				9F12A8A71F3BEB8E00180307 /* Model */,
 				9F4331351F3AC0CD00BA4331 /* API */,
@@ -204,6 +211,7 @@
 		9F3AF00B1F3A9B5C00EAE651 /* AppOfMyLifeTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F7763F41F3E91FB00E9E885 /* Extensions */,
 				9F3AF00C1F3A9B5C00EAE651 /* AppOfMyLifeTests.swift */,
 				9F3AF00E1F3A9B5C00EAE651 /* Info.plist */,
 			);
@@ -281,6 +289,23 @@
 				9F7763DC1F3D393F00E9E885 /* NextEpisodeCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		9F7763F41F3E91FB00E9E885 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9F7763F51F3E922300E9E885 /* DateExtensionTest.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9F7763FB1F3E98EC00E9E885 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				9F7763F71F3E985500E9E885 /* NextEpisodeSection.swift */,
+				9F7763F91F3E987700E9E885 /* NextEpisodeSection.xib */,
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +430,7 @@
 				9F3AEFFF1F3A9B5C00EAE651 /* Assets.xcassets in Resources */,
 				9F3AEFFD1F3A9B5C00EAE651 /* Login.storyboard in Resources */,
 				9F7763D21F3D33F300E9E885 /* Main.storyboard in Resources */,
+				9F7763FA1F3E987700E9E885 /* NextEpisodeSection.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F7763F81F3E985500E9E885 /* NextEpisodeSection.swift in Sources */,
 				9F43313B1F3AC59100BA4331 /* LoginPresenter.swift in Sources */,
 				9F7763E91F3D453400E9E885 /* UserCredential.swift in Sources */,
 				9F7763F31F3D49EA00E9E885 /* Schedule.swift in Sources */,
@@ -592,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3AF00D1F3A9B5C00EAE651 /* AppOfMyLifeTests.swift in Sources */,
+				9F7763F61F3E922300E9E885 /* DateExtensionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
