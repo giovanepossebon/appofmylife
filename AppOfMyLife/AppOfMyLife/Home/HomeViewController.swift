@@ -31,8 +31,8 @@ class HomeViewController: UITableViewController {
     }
     
     private func setupTableView() {
-        tableView.register(UINib(nibName: NextEpisodeCell.nibName, bundle: nil), forCellReuseIdentifier: NextEpisodeCell.identifier)
-        tableView.register(UINib(nibName: NextEpisodeSection.nibName, bundle: nil), forCellReuseIdentifier: NextEpisodeSection.identifier)
+        tableView.register(UINib(nibName: ScheduleCell.nibName, bundle: nil), forCellReuseIdentifier: ScheduleCell.identifier)
+        tableView.register(UINib(nibName: TitleHeaderSection.nibName, bundle: nil), forCellReuseIdentifier: TitleHeaderSection.identifier)
         tableView.separatorStyle = .none
     }
     
@@ -62,7 +62,7 @@ extension HomeViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: NextEpisodeCell.identifier, for: indexPath) as? NextEpisodeCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: ScheduleCell.identifier, for: indexPath) as? ScheduleCell {
             if let item = schedule?[indexPath.row] {
                 cell.populate(withSchedule: item)
                 
@@ -80,15 +80,15 @@ extension HomeViewController {
 extension HomeViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return NextEpisodeCell.height
+        return ScheduleCell.height
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return NextEpisodeSection.height
+        return TitleHeaderSection.height
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: NextEpisodeSection.identifier) as? NextEpisodeSection {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: TitleHeaderSection.identifier) as? TitleHeaderSection {
             cell.labelTitle.text = "In the next episode..."
             
             return cell

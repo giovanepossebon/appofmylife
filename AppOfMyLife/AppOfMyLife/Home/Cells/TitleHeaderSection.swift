@@ -8,10 +8,10 @@
 
 import UIKit
 
-class NextEpisodeSection: UITableViewCell {
+class TitleHeaderSection: UITableViewCell {
     
-    static let nibName = "NextEpisodeSection"
-    static let identifier = "NextEpisodeSection"
+    static let nibName = "TitleHeaderSection"
+    static let identifier = "TitleHeaderSection"
     static let height: CGFloat = 45
     
     @IBOutlet weak var labelTitle: UILabel!

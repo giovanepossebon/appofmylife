@@ -13,6 +13,7 @@ struct Progress: Mappable {
     var aired: Int?
     var completed: Int?
     var lastCollectedAt: String?
+    var nextEpisode: Episode?
  
     init?(map: Map) {}
     
@@ -20,5 +21,6 @@ struct Progress: Mappable {
         aired               <- map["aired"]
         completed           <- map["completed"]
         lastCollectedAt     <- map["last_collected_at"]
+        nextEpisode         <- map["next_episode"]
     }
 }

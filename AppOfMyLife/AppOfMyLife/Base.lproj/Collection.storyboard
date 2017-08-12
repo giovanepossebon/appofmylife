@@ -13,7 +13,7 @@
         <scene sceneID="Btw-XQ-xN6">
             <objects>
                 <collectionViewController storyboardIdentifier="CollectionViewController" title="My Shows" id="r8h-H9-LwU" customClass="CollectionViewController" customModule="AppOfMyLife" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="QiG-6q-JLo">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="QiG-6q-JLo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,7 +48,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KAI-89-Eyd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="flP-yn-xR3" id="G0b-Sm-SyK"/>
                                     <outlet property="delegate" destination="flP-yn-xR3" id="i8z-d9-3P1"/>
@@ -70,6 +70,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zom-DB-G4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1480.8" y="-378.26086956521743"/>
+        </scene>
+        <!--Episode Detail View Controller-->
+        <scene sceneID="BlX-Wt-nsZ">
+            <objects>
+                <viewController storyboardIdentifier="EpisodeDetailViewController" id="BhM-ew-NqQ" customClass="EpisodeDetailViewController" customModule="AppOfMyLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fhj-wM-GA5"/>
+                        <viewControllerLayoutGuide type="bottom" id="G4W-wm-cX6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6EJ-U2-7yt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wxh-GA-P92">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BhM-ew-NqQ" id="Tek-en-Yqj"/>
+                                    <outlet property="delegate" destination="BhM-ew-NqQ" id="0of-2Z-mtf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wxh-GA-P92" firstAttribute="top" secondItem="6EJ-U2-7yt" secondAttribute="top" id="2Xq-0b-xd7"/>
+                            <constraint firstAttribute="trailing" secondItem="wxh-GA-P92" secondAttribute="trailing" id="8zA-8q-TSU"/>
+                            <constraint firstItem="wxh-GA-P92" firstAttribute="leading" secondItem="6EJ-U2-7yt" secondAttribute="leading" id="9Dn-uY-rmk"/>
+                            <constraint firstItem="G4W-wm-cX6" firstAttribute="top" secondItem="wxh-GA-P92" secondAttribute="bottom" id="k9I-Z8-dcV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="wxh-GA-P92" id="nfx-pN-vrf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIz-db-21d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2228" y="-377.36131934032989"/>
         </scene>
     </scenes>
 </document>
