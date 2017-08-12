@@ -17,9 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fix-Pk-dTL" kind="relationship" relationship="viewControllers" id="GLo-FJ-5BB"/>
+                        <segue destination="hWR-uE-Ht6" kind="relationship" relationship="viewControllers" id="lZG-az-XYd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwV-GT-jsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -27,14 +30,39 @@
             <point key="canvasLocation" x="-879" y="-230"/>
         </scene>
         <!--Home-->
+        <scene sceneID="n3j-0l-zUC">
+            <objects>
+                <navigationController id="hWR-uE-Ht6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="icHome" id="ohJ-da-j5K"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="R5f-sS-ozd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.30196078430000001" green="0.1960784314" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fix-Pk-dTL" kind="relationship" relationship="rootViewController" id="hhL-w7-N1Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TcF-Hc-sCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-50" y="-658"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="URu-Zs-AVd">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="fix-Pk-dTL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="VwI-Wg-VKV"/>
+                    <tabBarItem key="tabBarItem" title="Teste" image="icHome" id="VwI-Wg-VKV"/>
+                    <navigationItem key="navigationItem" id="sao-Ze-u5M"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9B-Kj-c9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-172" y="-471"/>
+            <point key="canvasLocation" x="661" y="-658"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icHome" width="20" height="18"/>
+    </resources>
 </document>
