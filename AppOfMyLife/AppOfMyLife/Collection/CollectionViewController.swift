@@ -74,6 +74,21 @@ extension CollectionViewController {
 
 // MARK: CollectionViewDelegate
 
+extension CollectionViewController {
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let selectedShow = collections?[indexPath.row].show {
+            if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "ShowDetailViewController") as? ShowDetailViewController {
+                detailViewController.show = selectedShow
+                navigationController?.pushViewController(detailViewController, animated: true)
+            }
+        }
+    }
+    
+}
+
+// MARK: CollectionViewDelegate
+
 extension CollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

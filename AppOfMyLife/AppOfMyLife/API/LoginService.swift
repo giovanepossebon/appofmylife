@@ -9,16 +9,6 @@
 import Foundation
 import Alamofire
 
-struct Response<T> {
-    var data: T?
-    let result: Result
-}
-
-enum Result {
-    case success
-    case error(message: String)
-}
-
 struct LoginService {
     
     static let BASE_URL = TraktAPI.URLs.baseURL
