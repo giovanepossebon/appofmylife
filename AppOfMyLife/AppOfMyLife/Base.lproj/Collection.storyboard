@@ -23,24 +23,7 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="32" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SYN-aJ-es6">
-                                <rect key="frame" x="10" y="32" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="p5z-wT-954">
-                                <rect key="frame" x="61" y="32" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="r8h-H9-LwU" id="YX5-vE-9P9"/>
                             <outlet property="delegate" destination="r8h-H9-LwU" id="NiW-RY-F6X"/>
@@ -50,6 +33,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMZ-Xb-rMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="728" y="-378"/>
+        </scene>
+        <!--Show Detail View Controller-->
+        <scene sceneID="hdg-0P-nTJ">
+            <objects>
+                <viewController storyboardIdentifier="ShowDetailViewController" id="flP-yn-xR3" customClass="ShowDetailViewController" customModule="AppOfMyLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EMe-Y8-SgD"/>
+                        <viewControllerLayoutGuide type="bottom" id="c1f-2U-IA4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rSB-7e-QKS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KAI-89-Eyd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="flP-yn-xR3" id="G0b-Sm-SyK"/>
+                                    <outlet property="delegate" destination="flP-yn-xR3" id="i8z-d9-3P1"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KAI-89-Eyd" firstAttribute="leading" secondItem="rSB-7e-QKS" secondAttribute="leading" id="VjS-EA-DQP"/>
+                            <constraint firstItem="c1f-2U-IA4" firstAttribute="top" secondItem="KAI-89-Eyd" secondAttribute="bottom" id="Ykv-hl-ArH"/>
+                            <constraint firstAttribute="trailing" secondItem="KAI-89-Eyd" secondAttribute="trailing" id="qAW-HU-yOs"/>
+                            <constraint firstItem="KAI-89-Eyd" firstAttribute="top" secondItem="rSB-7e-QKS" secondAttribute="top" id="ruQ-dR-Jyd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="KAI-89-Eyd" id="Ffe-RQ-pys"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zom-DB-G4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480.8" y="-378.26086956521743"/>
         </scene>
     </scenes>
 </document>

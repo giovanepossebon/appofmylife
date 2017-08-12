@@ -20,3 +20,13 @@ struct TraktAPI {
         static let baseURL = "https://api.trakt.tv/"
     }
 }
+
+struct Response<T> {
+    var data: T?
+    let result: Result
+}
+
+enum Result {
+    case success
+    case error(message: String)
+}

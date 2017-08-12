@@ -14,6 +14,7 @@ struct Episode: Mappable {
     var number: Int?
     var title: String?
     var ids: ExternalID?
+    var completed: Bool?
     
     init?(map: Map) {}
     
@@ -22,6 +23,7 @@ struct Episode: Mappable {
         number      <- map["number"]
         title       <- map["title"]
         ids         <- map["ids"]
+        completed   <- map["completed"]
     }
 }
 

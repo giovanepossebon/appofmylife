@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgressCell" rowHeight="65" id="3bg-zC-qWN" customClass="ProgressCell" customModule="AppOfMyLife" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3bg-zC-qWN" id="sPA-g8-AHG">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgL-cJ-tHb">
+                        <rect key="frame" x="15" y="12" width="72" height="23.5"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bJc-g1-64l">
+                        <rect key="frame" x="15" y="49.5" width="345" height="2"/>
+                        <color key="progressTintColor" red="0.30196078431372547" green="0.22656888276143791" blue="0.5800120634191176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezU-8l-TJ3">
+                        <rect key="frame" x="311.5" y="12" width="48.5" height="23.5"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="ezU-8l-TJ3" secondAttribute="trailing" constant="7" id="1oa-Bd-jhU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="bJc-g1-64l" secondAttribute="trailing" constant="7" id="45E-bH-dks"/>
+                    <constraint firstItem="ezU-8l-TJ3" firstAttribute="top" secondItem="sPA-g8-AHG" secondAttribute="topMargin" constant="4" id="48k-Z6-Myo"/>
+                    <constraint firstItem="SgL-cJ-tHb" firstAttribute="leading" secondItem="sPA-g8-AHG" secondAttribute="leadingMargin" constant="7" id="TlT-t4-dbD"/>
+                    <constraint firstAttribute="bottom" secondItem="bJc-g1-64l" secondAttribute="bottom" constant="15" id="VS6-7O-wYc"/>
+                    <constraint firstItem="bJc-g1-64l" firstAttribute="centerX" secondItem="sPA-g8-AHG" secondAttribute="centerX" id="bF7-Hn-2bv"/>
+                    <constraint firstItem="SgL-cJ-tHb" firstAttribute="top" secondItem="sPA-g8-AHG" secondAttribute="topMargin" constant="4" id="mE6-wL-CsI"/>
+                    <constraint firstItem="bJc-g1-64l" firstAttribute="leading" secondItem="sPA-g8-AHG" secondAttribute="leadingMargin" constant="7" id="t5j-qf-44v"/>
+                    <constraint firstItem="bJc-g1-64l" firstAttribute="top" secondItem="ezU-8l-TJ3" secondAttribute="bottom" constant="14" id="tAN-Lz-bV4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="statusLabel" destination="ezU-8l-TJ3" id="4AB-1q-u5W"/>
+                <outlet property="statusProgressView" destination="bJc-g1-64l" id="O9S-9c-MNJ"/>
+            </connections>
+            <point key="canvasLocation" x="32.5" y="-249.5"/>
+        </tableViewCell>
+    </objects>
+</document>

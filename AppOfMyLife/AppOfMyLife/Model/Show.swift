@@ -27,7 +27,7 @@ struct Show: Mappable {
     var title: String?
     var year: Int?
     var ids: ExternalID?
-    var thumbURL: String?
+    var overview: String?
     
     init?(map: Map) {}
     
@@ -35,6 +35,7 @@ struct Show: Mappable {
         title       <- map["title"]
         year        <- map["year"]
         ids         <- map["ids"]
+        overview    <- map["overview"]
     }
     
     func getThumbnailImage(forBannerStyle style: ShowBannerStyle) -> String {
