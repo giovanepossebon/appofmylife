@@ -5,7 +5,7 @@
 - [x] Login
 - [x] Home (Next episodes from my series)
 - [ ] TV show percentage completion
-- [ ] List of my series
+- [x] List of my series
 - [ ] Episode informations
 - [ ] Mark episode as watched
 - [ ] Profile
