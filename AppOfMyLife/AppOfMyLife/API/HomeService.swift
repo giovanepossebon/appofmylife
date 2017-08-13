@@ -19,7 +19,7 @@ struct HomeService {
     
     static func getMySchedule(callback: @escaping (Response<[Schedule]>) -> ()) {
         let params: [String: Any] = [
-            "start_date": Date().traktApiFormatedData(),
+            "start_date": Date().ISOStringFromDate(withDateFormat: .traktAPI),
             "days": defaultNumberOfDays
         ]
         

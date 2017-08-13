@@ -14,8 +14,10 @@ private enum DetailRows: Int {
     case progress
     case nextEpisodeHeader
     case nextEpisode
+    case otherEpisodesHeader
+    case seasons
     
-    static let count = DetailRows.nextEpisode.hashValue + 1
+    static let count = DetailRows.seasons.hashValue + 1
 }
 
 protocol ShowDetailView: class {
@@ -112,7 +114,7 @@ extension ShowDetailViewController: UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: ImageCell.identifier, for: indexPath) as? ImageCell {
                 
                 if let tvdbId = showDetail?.ids?.tvdb {
-                    cell.populate(withImageUrl: showDetail?.getThumbnailImage(forBannerStyle: .portrait(id: tvdbId)))
+                    cell.populate(withImageUrl: showDetail?.getThumbnailImage(forBannerStyle: .portrait(id: tvdbId, variation: 1)))
                 }
                 
                 return cell
@@ -134,9 +136,9 @@ extension ShowDetailViewController: UITableViewDataSource {
                 
                 return cell
             }
-        case .nextEpisodeHeader:
+        case .nextEpisodeHeader, .otherEpisodesHeader:
             if let cell = tableView.dequeueReusableCell(withIdentifier: TitleHeaderSection.identifier, for: indexPath) as? TitleHeaderSection {
-                cell.labelTitle.text = "Next episode..."
+                cell.labelTitle.text = rowType == .nextEpisodeHeader ? "Next episode..." : "More..."
                 
                 return cell
             }
@@ -146,8 +148,14 @@ extension ShowDetailViewController: UITableViewDataSource {
                 if nextEpisode == nil {
                     cell.populate(withTitle: "There's no new episodes", withAccessoryType: .none, enabled: false)
                 } else {
-                    cell.populate(withTitle: nextEpisode?.formattedEpisodeName() ?? "", withAccessoryType: .disclosureIndicator)
+                    cell.populate(withTitle: nextEpisode?.fullEpisodeName() ?? "", withAccessoryType: .disclosureIndicator)
                 }
+                
+                return cell
+            }
+        case .seasons:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: TitleWithAccessoryCell.identifier, for: indexPath) as? TitleWithAccessoryCell {
+                cell.populate(withTitle: "Seasons", withAccessoryType: .disclosureIndicator)
                 
                 return cell
             }
@@ -161,12 +169,17 @@ extension ShowDetailViewController: UITableViewDataSource {
 extension ShowDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == DetailRows.nextEpisode.hashValue {
-            if let nextEpisode = nextEpisode, let episodeDetailViewController = storyboard?.instantiateViewController(withIdentifier: "EpisodeDetailViewController") as? EpisodeDetailViewController {
-                episodeDetailViewController.episode = nextEpisode
-                episodeDetailViewController.show = show
-                navigationController?.pushViewController(episodeDetailViewController, animated: true)
-            }
+        guard let rowType = DetailRows(rawValue: indexPath.row) else {
+            return
+        }
+        
+        switch rowType {
+        case .nextEpisode:
+            navigateToEpisodeDetail()
+        case .seasons:
+            navigateToSeasonList()
+        default:
+            return
         }
     }
     
@@ -182,15 +195,30 @@ extension ShowDetailViewController: UITableViewDelegate {
             return DescriptionCell.height
         case .progress:
             return ProgressCell.height
-        case .nextEpisodeHeader:
+        case .nextEpisodeHeader, .otherEpisodesHeader:
             return TitleHeaderSection.height
-        case .nextEpisode:
+        case .nextEpisode, .seasons:
             return TitleWithAccessoryCell.height
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    private func navigateToEpisodeDetail() {
+        if let nextEpisode = nextEpisode, let episodeDetailViewController = storyboard?.instantiateViewController(withIdentifier: "EpisodeDetailViewController") as? EpisodeDetailViewController {
+            episodeDetailViewController.episode = nextEpisode
+            episodeDetailViewController.show = show
+            navigationController?.pushViewController(episodeDetailViewController, animated: true)
+        }
+    }
+    
+    private func navigateToSeasonList() {
+        if let seasonsListViewController = storyboard?.instantiateViewController(withIdentifier: "SeasonsListViewController") as? SeasonsListViewController {
+            seasonsListViewController.show = show
+            navigationController?.pushViewController(seasonsListViewController, animated: true)
+        }
     }
     
 }

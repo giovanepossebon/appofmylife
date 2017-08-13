@@ -24,6 +24,17 @@
 		9F433AAD1F3F60B200A5E562 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433AAC1F3F60B200A5E562 /* EpisodeDetailViewController.swift */; };
 		9F433AAF1F3F60E100A5E562 /* EpisodeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433AAE1F3F60E100A5E562 /* EpisodeDetailPresenter.swift */; };
 		9F433AB11F3F61F800A5E562 /* EpisodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433AB01F3F61F800A5E562 /* EpisodeService.swift */; };
+		9F433AB41F40C1CE00A5E562 /* SeasonsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433AB31F40C1CE00A5E562 /* SeasonsListViewController.swift */; };
+		9F433AB61F40C24D00A5E562 /* SeasonsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433AB51F40C24D00A5E562 /* SeasonsListPresenter.swift */; };
+		9F433AB81F40C4A600A5E562 /* SeasonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433AB71F40C4A600A5E562 /* SeasonService.swift */; };
+		9F433ABB1F40D85300A5E562 /* EpisodesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433ABA1F40D85300A5E562 /* EpisodesListViewController.swift */; };
+		9F433ABD1F40D94300A5E562 /* EpisodesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433ABC1F40D94300A5E562 /* EpisodesListPresenter.swift */; };
+		9F433ABF1F40E19100A5E562 /* EpisodeDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F433ABE1F40E19100A5E562 /* EpisodeDateCell.xib */; };
+		9F433AC11F40E3F400A5E562 /* EpisodeDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433AC01F40E3F400A5E562 /* EpisodeDateCell.swift */; };
+		9F433AC51F40F01F00A5E562 /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433AC41F40F01F00A5E562 /* HistoryService.swift */; };
+		9F433AC71F40F0AF00A5E562 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433AC61F40F0AF00A5E562 /* History.swift */; };
+		9F433AC91F40F3C400A5E562 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433AC81F40F3C400A5E562 /* ButtonCell.swift */; };
+		9F433ACB1F40F3D200A5E562 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F433ACA1F40F3D200A5E562 /* ButtonCell.xib */; };
 		9F7763D21F3D33F300E9E885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7763D01F3D33F300E9E885 /* Main.storyboard */; };
 		9F7763D51F3D346400E9E885 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7763D31F3D346400E9E885 /* Home.storyboard */; };
 		9F7763D81F3D38CA00E9E885 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763D71F3D38CA00E9E885 /* HomeViewController.swift */; };
@@ -109,6 +120,17 @@
 		9F433AAC1F3F60B200A5E562 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeDetailViewController.swift; path = EpisodeDetail/EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		9F433AAE1F3F60E100A5E562 /* EpisodeDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeDetailPresenter.swift; path = EpisodeDetail/EpisodeDetailPresenter.swift; sourceTree = "<group>"; };
 		9F433AB01F3F61F800A5E562 /* EpisodeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeService.swift; path = API/EpisodeService.swift; sourceTree = "<group>"; };
+		9F433AB31F40C1CE00A5E562 /* SeasonsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeasonsListViewController.swift; path = Seasons/SeasonsListViewController.swift; sourceTree = "<group>"; };
+		9F433AB51F40C24D00A5E562 /* SeasonsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeasonsListPresenter.swift; path = Seasons/SeasonsListPresenter.swift; sourceTree = "<group>"; };
+		9F433AB71F40C4A600A5E562 /* SeasonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeasonService.swift; path = API/SeasonService.swift; sourceTree = "<group>"; };
+		9F433ABA1F40D85300A5E562 /* EpisodesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodesListViewController.swift; path = Episodes/EpisodesListViewController.swift; sourceTree = "<group>"; };
+		9F433ABC1F40D94300A5E562 /* EpisodesListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodesListPresenter.swift; path = Episodes/EpisodesListPresenter.swift; sourceTree = "<group>"; };
+		9F433ABE1F40E19100A5E562 /* EpisodeDateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EpisodeDateCell.xib; path = CustomCells/EpisodeDateCell.xib; sourceTree = "<group>"; };
+		9F433AC01F40E3F400A5E562 /* EpisodeDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeDateCell.swift; path = CustomCells/EpisodeDateCell.swift; sourceTree = "<group>"; };
+		9F433AC41F40F01F00A5E562 /* HistoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryService.swift; path = API/HistoryService.swift; sourceTree = "<group>"; };
+		9F433AC61F40F0AF00A5E562 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = History.swift; path = Model/History.swift; sourceTree = "<group>"; };
+		9F433AC81F40F3C400A5E562 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonCell.swift; path = CustomCells/ButtonCell.swift; sourceTree = "<group>"; };
+		9F433ACA1F40F3D200A5E562 /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonCell.xib; path = CustomCells/ButtonCell.xib; sourceTree = "<group>"; };
 		9F7763D11F3D33F300E9E885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F7763D41F3D346400E9E885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		9F7763D71F3D38CA00E9E885 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Home/HomeViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +234,7 @@
 				9F7763EC1F3D467500E9E885 /* ExternalID.swift */,
 				9F7763F21F3D49EA00E9E885 /* Schedule.swift */,
 				9F7764071F3EA49900E9E885 /* Collection.swift */,
+				9F433AC61F40F0AF00A5E562 /* History.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -309,6 +332,8 @@
 				9F7764011F3EA18F00E9E885 /* CollectionService.swift */,
 				9F77641B1F3EC7BA00E9E885 /* ShowDetailService.swift */,
 				9F433AB01F3F61F800A5E562 /* EpisodeService.swift */,
+				9F433AB71F40C4A600A5E562 /* SeasonService.swift */,
+				9F433AC41F40F01F00A5E562 /* HistoryService.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -322,6 +347,24 @@
 			name = EpisodeDetail;
 			sourceTree = "<group>";
 		};
+		9F433AB21F40C17100A5E562 /* Seasons */ = {
+			isa = PBXGroup;
+			children = (
+				9F433AB31F40C1CE00A5E562 /* SeasonsListViewController.swift */,
+				9F433AB51F40C24D00A5E562 /* SeasonsListPresenter.swift */,
+			);
+			name = Seasons;
+			sourceTree = "<group>";
+		};
+		9F433AB91F40D83B00A5E562 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				9F433ABA1F40D85300A5E562 /* EpisodesListViewController.swift */,
+				9F433ABC1F40D94300A5E562 /* EpisodesListPresenter.swift */,
+			);
+			name = Episodes;
+			sourceTree = "<group>";
+		};
 		9F7763CF1F3D33B300E9E885 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,14 +376,14 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		9F7763D61F3D389500E9E885 /* Home */ = {
+		9F7763D61F3D389500E9E885 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
 				9F7763D91F3D38ED00E9E885 /* Cells */,
 				9F7763D71F3D38CA00E9E885 /* HomeViewController.swift */,
 				9F7763E41F3D429A00E9E885 /* HomePresenter.swift */,
 			);
-			name = Home;
+			name = Schedule;
 			sourceTree = "<group>";
 		};
 		9F7763D91F3D38ED00E9E885 /* Cells */ = {
@@ -373,6 +416,10 @@
 				9F7764231F3F3C5700E9E885 /* ProgressCell.xib */,
 				9F8ABBD31F3F4BDD0040F100 /* TitleWithAccessoryCell.swift */,
 				9F8ABBD51F3F4C010040F100 /* TitleWithAccessoryCell.xib */,
+				9F433AC01F40E3F400A5E562 /* EpisodeDateCell.swift */,
+				9F433ABE1F40E19100A5E562 /* EpisodeDateCell.xib */,
+				9F433AC81F40F3C400A5E562 /* ButtonCell.swift */,
+				9F433ACA1F40F3D200A5E562 /* ButtonCell.xib */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -390,8 +437,10 @@
 		9F7764061F3EA38900E9E885 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9F433AB91F40D83B00A5E562 /* Episodes */,
+				9F433AB21F40C17100A5E562 /* Seasons */,
 				9F43311F1F3AB01D00BA4331 /* Login */,
-				9F7763D61F3D389500E9E885 /* Home */,
+				9F7763D61F3D389500E9E885 /* Schedule */,
 				9F7763FC1F3E9FFD00E9E885 /* Collection */,
 				9F77640E1F3EBEC100E9E885 /* ShowDetail */,
 				9F433AAB1F3F607C00A5E562 /* EpisodeDetail */,
@@ -544,6 +593,8 @@
 				9F77641A1F3EC3A400E9E885 /* DescriptionCell.xib in Resources */,
 				9F3AEFFD1F3A9B5C00EAE651 /* Login.storyboard in Resources */,
 				9F7763D21F3D33F300E9E885 /* Main.storyboard in Resources */,
+				9F433ABF1F40E19100A5E562 /* EpisodeDateCell.xib in Resources */,
+				9F433ACB1F40F3D200A5E562 /* ButtonCell.xib in Resources */,
 				9F7763FA1F3E987700E9E885 /* TitleHeaderSection.xib in Resources */,
 				9F8ABBD61F3F4C010040F100 /* TitleWithAccessoryCell.xib in Resources */,
 			);
@@ -716,7 +767,10 @@
 				9F433AAD1F3F60B200A5E562 /* EpisodeDetailViewController.swift in Sources */,
 				9F7764021F3EA18F00E9E885 /* CollectionService.swift in Sources */,
 				9F7763F31F3D49EA00E9E885 /* Schedule.swift in Sources */,
+				9F433AB61F40C24D00A5E562 /* SeasonsListPresenter.swift in Sources */,
+				9F433AC11F40E3F400A5E562 /* EpisodeDateCell.swift in Sources */,
 				9F12A8AB1F3BEBC800180307 /* UserSession.swift in Sources */,
+				9F433AB41F40C1CE00A5E562 /* SeasonsListViewController.swift in Sources */,
 				9F77641E1F3F33FA00E9E885 /* Progress.swift in Sources */,
 				9F4331341F3ABEFB00BA4331 /* Network.swift in Sources */,
 				9F7764081F3EA49900E9E885 /* Collection.swift in Sources */,
@@ -724,23 +778,29 @@
 				9F12A8A61F3BE84300180307 /* LoginService.swift in Sources */,
 				9F7763E71F3D43A500E9E885 /* Episode.swift in Sources */,
 				9F7764181F3EC38800E9E885 /* DescriptionCell.swift in Sources */,
+				9F433AC91F40F3C400A5E562 /* ButtonCell.swift in Sources */,
 				9F4331391F3AC49900BA4331 /* LoginViewController.swift in Sources */,
 				9F7764101F3EBEE200E9E885 /* ShowDetailViewController.swift in Sources */,
 				9F7763E51F3D429A00E9E885 /* HomePresenter.swift in Sources */,
 				9F7763F11F3D48D300E9E885 /* DateExtension.swift in Sources */,
+				9F433ABD1F40D94300A5E562 /* EpisodesListPresenter.swift in Sources */,
 				9F7763FE1F3EA03400E9E885 /* CollectionViewController.swift in Sources */,
 				9F7763EF1F3D47FB00E9E885 /* HomeService.swift in Sources */,
 				9F7763D81F3D38CA00E9E885 /* HomeViewController.swift in Sources */,
 				9F7763EB1F3D462D00E9E885 /* Show.swift in Sources */,
+				9F433AC51F40F01F00A5E562 /* HistoryService.swift in Sources */,
 				9F7764001F3EA06900E9E885 /* CollectionPresenter.swift in Sources */,
 				9F7764201F3F344F00E9E885 /* Season.swift in Sources */,
 				9F7763ED1F3D467500E9E885 /* ExternalID.swift in Sources */,
 				9F77640D1F3EAE7100E9E885 /* CollectionItemCell.swift in Sources */,
 				9F7763DB1F3D391A00E9E885 /* ScheduleCell.swift in Sources */,
 				9F3AEFF81F3A9B5C00EAE651 /* AppDelegate.swift in Sources */,
+				9F433AC71F40F0AF00A5E562 /* History.swift in Sources */,
 				9F7764121F3EBF2E00E9E885 /* ShowDetailPresenter.swift in Sources */,
 				9F8ABBD41F3F4BDD0040F100 /* TitleWithAccessoryCell.swift in Sources */,
+				9F433AB81F40C4A600A5E562 /* SeasonService.swift in Sources */,
 				9F433AAF1F3F60E100A5E562 /* EpisodeDetailPresenter.swift in Sources */,
+				9F433ABB1F40D85300A5E562 /* EpisodesListViewController.swift in Sources */,
 				9F7764141F3EC23B00E9E885 /* ImageCell.swift in Sources */,
 				9F77641C1F3EC7BA00E9E885 /* ShowDetailService.swift in Sources */,
 			);

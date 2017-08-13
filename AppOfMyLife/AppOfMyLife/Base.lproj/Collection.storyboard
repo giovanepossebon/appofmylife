@@ -109,5 +109,42 @@
             </objects>
             <point key="canvasLocation" x="2228" y="-377.36131934032989"/>
         </scene>
+        <!--Seasons List View Controller-->
+        <scene sceneID="ICQ-31-dSD">
+            <objects>
+                <tableViewController storyboardIdentifier="SeasonsListViewController" id="lZG-cY-XHa" customClass="SeasonsListViewController" customModule="AppOfMyLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xcw-Th-weE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.30196078430000001" green="0.1960784314" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="lZG-cY-XHa" id="gko-jh-xCG"/>
+                            <outlet property="delegate" destination="lZG-cY-XHa" id="hms-FG-N4s"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVw-ld-LrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2932" y="-378"/>
+        </scene>
+        <!--Episodes List View Controller-->
+        <scene sceneID="jn4-RG-2RI">
+            <objects>
+                <tableViewController storyboardIdentifier="EpisodesListViewController" id="05D-1f-i7M" customClass="EpisodesListViewController" customModule="AppOfMyLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WR3-fV-M5f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="05D-1f-i7M" id="Nnb-WH-AYq"/>
+                            <outlet property="delegate" destination="05D-1f-i7M" id="Rdg-7O-rTK"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FFI-XT-3fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3609" y="-378"/>
+        </scene>
     </scenes>
 </document>
