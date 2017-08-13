@@ -40,6 +40,7 @@
                     <constraint firstItem="Bl1-Ha-Xdk" firstAttribute="leading" secondItem="D54-ar-MaW" secondAttribute="leading" constant="16" id="jCu-9z-t2G"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="labelTitle" destination="Bl1-Ha-Xdk" id="T6T-jg-SYg"/>
             </connections>

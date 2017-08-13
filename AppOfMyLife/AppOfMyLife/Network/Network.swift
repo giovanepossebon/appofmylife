@@ -11,20 +11,9 @@ import Alamofire
 
 class Network {
     
-    enum NetworkMethod: String {
-        case get = "GET"
-        case post = "POST"
-        case put = "PUT"
-        case delete = "DELETE"
-    }
-    
-    //MARK: public
-    
-    class func request(_ url: URL, method: NetworkMethod = .get, parameters: [String: Any]? = nil, log: Bool = true, completion: @escaping (DataResponse<Any>) -> Void) {
+    class func request(_ url: URL, method: HTTPMethod = .get, parameters: [String: Any]? = nil, log: Bool = true, encoding: ParameterEncoding = JSONEncoding.default, completion: @escaping (DataResponse<Any>) -> Void) {
         
-        let alamofireMethod = HTTPMethod.init(rawValue: method.rawValue) ?? .get
-        
-        Alamofire.request(url, method: alamofireMethod, parameters: parameters, encoding: JSONEncoding.default, headers: defaultHeaders()).responseJSON(completionHandler: { response in
+        Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: defaultHeaders()).responseJSON(completionHandler: { response in
             
             if log {
                 logAlamofireRequest(response: response)

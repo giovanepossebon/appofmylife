@@ -20,17 +20,17 @@ class ScheduleCell: UITableViewCell {
     @IBOutlet weak var labelSubtitle: UILabel!
     @IBOutlet weak var labelDate: UILabel!
     @IBOutlet weak var labelHour: UILabel!
-
+    
     func populate(withSchedule schedule: Schedule) {
         labelTitle.text = schedule.episode?.title
         labelSubtitle.text = schedule.show?.title
         
         if let timestamp = schedule.firstAired, let time = Date.dateFromISOString(string: timestamp) {
-            labelDate.text = time.ISODayAndMonthFormatted()
-            labelHour.text = time.ISOHourFormatted()
+            labelDate.text = time.ISOStringFromDate(withDateFormat: .dayAndMonth)
+            labelHour.text = time.ISOStringFromDate(withDateFormat: .hour)
         }
         
-        if let tvdbId = schedule.show?.ids?.tvdb, let url = URL(string: ShowBannerStyle.landscape(id: tvdbId).url) {
+        if let tvdbId = schedule.show?.ids?.tvdb, let url = URL(string: ShowBannerStyle.landscape(id: tvdbId, variation: 2).url) {
             imgBackground.af_setImage(withURL: url)
         }
         

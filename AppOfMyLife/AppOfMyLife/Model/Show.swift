@@ -10,15 +10,15 @@ import Foundation
 import ObjectMapper
 
 enum ShowBannerStyle {
-    case landscape(id: Int)
-    case portrait(id: Int)
+    case landscape(id: Int, variation: Int)
+    case portrait(id: Int, variation: Int)
     
     var url: String {
         switch self {
-        case .landscape(id: let id):
-            return "https://thetvdb.com/banners/graphical/\(id)-g2.jpg"
-        case .portrait(id: let id):
-            return "https://thetvdb.com/banners/posters/\(id)-1.jpg"
+        case .landscape(id: let id, variation: let variation):
+            return "https://thetvdb.com/banners/graphical/\(id)-g\(variation).jpg"
+        case .portrait(id: let id, variation: let variation):
+            return "https://thetvdb.com/banners/posters/\(id)-\(variation).jpg"
         }
     }
 }

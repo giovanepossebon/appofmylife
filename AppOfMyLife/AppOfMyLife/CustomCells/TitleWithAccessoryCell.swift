@@ -16,6 +16,10 @@ class TitleWithAccessoryCell: UITableViewCell {
     
     @IBOutlet weak var labelTitle: UILabel!
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(false, animated: animated)
+    }
+    
     func populate(withTitle title: String,
                   withAccessoryType type: UITableViewCellAccessoryType,
                   enabled: Bool = true) {

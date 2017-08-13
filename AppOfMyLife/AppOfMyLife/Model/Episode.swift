@@ -17,6 +17,7 @@ struct Episode: Mappable {
     var completed: Bool?
     var overview: String?
     var firstAired: String?
+    var runtime: Int?
     
     init?(map: Map) {}
     
@@ -28,14 +29,23 @@ struct Episode: Mappable {
         completed       <- map["completed"]
         overview        <- map["overview"]
         firstAired      <- map["first_aired"]
+        runtime         <- map["runtime"]
     }
     
-    func formattedEpisodeName() -> String {
+    func fullEpisodeName() -> String {
         if let season = self.season, let episode = self.number {
             return "S\(season)E\(episode) \(title ?? "")"
         }
         
-        return ""
+        return title ?? ""
+    }
+    
+    func numberedEpisodeName() -> String {
+        if let episode = self.number {
+            return "\(episode) - \(title ?? "")"
+        }
+        
+        return title ?? ""
     }
     
     func getThumbnailImage(forBannerStyle style: ShowBannerStyle) -> String {

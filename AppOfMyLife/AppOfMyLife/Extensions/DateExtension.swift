@@ -8,14 +8,15 @@
 
 import UIKit
 
+enum DateFormat: String {
+    case dayAndMonth = "dd/MM"
+    case dayMonthAndHour = "dd/MM - HH:mm"
+    case hour = "HH:mm"
+    case year = "YYYY"
+    case traktAPI = "yyyy-MM-dd"
+}
+
 extension Date {
-    
-    func traktApiFormatedData() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        return dateFormatter.string(from: self)
-    }
     
     static func dateFromISOString(string: String) -> Date? {
         let dateFormatter = DateFormatter()
@@ -26,20 +27,10 @@ extension Date {
         return dateFormatter.date(from: string)
     }
     
-    func ISOStringFromDate(withDateFormatter dateFormatter: DateFormatter) -> String {
+    func ISOStringFromDate(withDateFormat format: DateFormat) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format.rawValue
         return dateFormatter.string(from: self)
-    }
-    
-    func ISODayAndMonthFormatted() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM"
-        return self.ISOStringFromDate(withDateFormatter: dateFormatter)
-    }
-    
-    func ISOHourFormatted() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm"
-        return self.ISOStringFromDate(withDateFormatter: dateFormatter)
     }
     
 }

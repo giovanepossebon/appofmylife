@@ -14,6 +14,7 @@ struct Season: Mappable {
     var aired: Int?
     var completed: Int?
     var episodes: [Episode]?
+    var ids: ExternalID?
     
     init?(map: Map) {}
     
@@ -22,5 +23,6 @@ struct Season: Mappable {
         aired           <- map["aired"]
         completed       <- map["completed"]
         episodes        <- map["episodes"]
+        ids             <- map["ids"]
     }
 }
