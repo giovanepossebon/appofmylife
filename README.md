@@ -7,7 +7,7 @@
 - [x] TV show percentage completion
 - [x] List of my series
 - [x] Episode informations
-- [ ] Mark episode as watched
+- [x] Mark episode as watched
 - [ ] Profile
 - [ ] Search
 - [ ] Add TV show to Watchlist
