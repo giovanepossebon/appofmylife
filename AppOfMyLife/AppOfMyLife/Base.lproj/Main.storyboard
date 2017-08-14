@@ -22,8 +22,9 @@
                         <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="hWR-uE-Ht6" kind="relationship" relationship="viewControllers" id="lZG-az-XYd"/>
                         <segue destination="zrJ-Dq-q3A" kind="relationship" relationship="viewControllers" id="a9d-hF-0gk"/>
+                        <segue destination="hWR-uE-Ht6" kind="relationship" relationship="viewControllers" id="lZG-az-XYd"/>
+                        <segue destination="San-lh-xt4" kind="relationship" relationship="viewControllers" id="teK-ij-4Wl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwV-GT-jsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,7 +36,7 @@
             <objects>
                 <navigationController id="zrJ-Dq-q3A" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="icHome" id="qz3-kp-vzb"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lRV-Bl-q5U">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="lRV-Bl-q5U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -51,6 +52,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNM-qH-l2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-50" y="13"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="NlF-rw-WEV">
+            <objects>
+                <navigationController id="San-lh-xt4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="icProfile" id="JnT-0P-IDe"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="SA4-b4-8zU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.30196078430000001" green="0.1960784314" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ppw-LI-JoY" kind="relationship" relationship="rootViewController" id="6rV-1a-c6l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bPf-3r-HaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-50" y="732"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="HH3-EZ-ltm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="ppw-LI-JoY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="LPy-Wk-54W"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCz-Pb-E2v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="774" y="732"/>
         </scene>
         <!--Collection-->
         <scene sceneID="FgE-go-DjQ">
@@ -70,6 +103,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="R5f-sS-ozd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.30196078430000001" green="0.1960784314" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -97,5 +131,6 @@
     </scenes>
     <resources>
         <image name="icHome" width="20" height="18"/>
+        <image name="icProfile" width="15" height="19"/>
     </resources>
 </document>

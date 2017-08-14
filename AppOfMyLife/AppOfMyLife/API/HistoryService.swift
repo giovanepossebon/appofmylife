@@ -62,11 +62,11 @@ struct HistoryService {
             ]
         ]
         
-        Network.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString) { response in
+        Network.request(url, method: .post, parameters: parameters) { response in
             switch response.result {
             case .success:
                 guard response.response?.statusCode == 201 else {
-                    callback(Response<Result>(data: nil, result: .error(message: "Problem")))
+                    callback(Response<Result>(data: nil, result: .error(message: "Invalid response")))
                     return
                 }
                 

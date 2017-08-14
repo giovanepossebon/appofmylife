@@ -13,13 +13,18 @@ class ScheduleCell: UITableViewCell {
     
     static let identifier = "ScheduleCell"
     static let nibName = "ScheduleCell"
-    static let height: CGFloat = 135.0
+    static let height: CGFloat = 135
     
     @IBOutlet weak var imgBackground: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelSubtitle: UILabel!
     @IBOutlet weak var labelDate: UILabel!
     @IBOutlet weak var labelHour: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionStyle = .none
+    }
     
     func populate(withSchedule schedule: Schedule) {
         labelTitle.text = schedule.episode?.title

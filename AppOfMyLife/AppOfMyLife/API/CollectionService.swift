@@ -18,22 +18,22 @@ struct CollectionService {
     
     static func getShowCollection(callback: @escaping (Response<[Collection]>) -> ()) {
         guard let url = URL(string: "\(BASE_URL + Endpoint.showCollection)") else {
-            callback(Response<[Collection]>(data: [], result: Result.error(message: "URL invalida")))
+            callback(Response<[Collection]>(data: [], result: .error(message: "Invalid URL")))
             return
         }
         
-        Network.request(url, method: .get, log: true) { response in
+        Network.request(url, method: .get, log: false) { response in
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [[String:Any]] else {
-                    callback(Response<[Collection]>(data: [], result: Result.error(message: "Erro ao parsear")))
+                    callback(Response<[Collection]>(data: [], result: .error(message: "Invalid Serialization")))
                     return
                 }
                 
                 let shows = data.flatMap { Collection(JSON: $0) }
-                callback(Response<[Collection]>(data: shows, result: Result.success))
+                callback(Response<[Collection]>(data: shows, result: .success))
             case .failure(let error):
-                callback(Response<[Collection]>(data: [], result: Result.error(message: error.localizedDescription)))
+                callback(Response<[Collection]>(data: [], result: .error(message: error.localizedDescription)))
             }
         }
         

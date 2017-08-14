@@ -22,11 +22,27 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         presenter = LoginPresenter(view: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if UserSession.shared.accessToken != "" {
+            navigateToHomeViewController()
+        }
     }
     
     @IBAction func didTouchLogin(_ sender: Any) {
         presenter?.login()
+    }
+    
+    fileprivate func navigateToHomeViewController() {
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let mainTabBarController = mainStoryBoard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController {
+            present(mainTabBarController, animated: true, completion: nil)
+        }
     }
     
 }
@@ -49,13 +65,7 @@ extension LoginViewController: LoginView {
     func errorOnLogin(error: String) {
         print(error)
     }
-    
-    private func navigateToHomeViewController() {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-        if let mainTabBarController = mainStoryBoard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController {
-            present(mainTabBarController, animated: true, completion: nil)
-        }
-    }
+
 }
 
 extension LoginViewController: SFSafariViewControllerDelegate {
