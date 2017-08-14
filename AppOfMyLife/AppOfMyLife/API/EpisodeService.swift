@@ -28,12 +28,12 @@ struct EpisodeService {
     
     static func getEpisodeList(fromShow show: Show, season: Season, callback: @escaping (Response<[Episode]>) -> ()) {
         guard let slug = show.ids?.slug, let season = season.number else {
-            callback(Response<[Episode]>(data: [], result: Result.error(message: "Invalid request")))
+            callback(Response<[Episode]>(data: [], result: .error(message: "Invalid request")))
             return
         }
         
         guard let url = URL(string: Endpoint.episodesList(id: slug, season: season).url) else {
-            callback(Response<[Episode]>(data: [], result: Result.error(message: "Invalid URL")))
+            callback(Response<[Episode]>(data: [], result: .error(message: "Invalid URL")))
             return
         }
         
@@ -41,26 +41,26 @@ struct EpisodeService {
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [[String: Any]] else {
-                    callback(Response<[Episode]>(data: [], result: Result.error(message: "Serialization failed")))
+                    callback(Response<[Episode]>(data: [], result: .error(message: "Serialization failed")))
                     return
                 }
                 
                 let episodes = data.flatMap { Episode(JSON: $0) }
                 callback(Response<[Episode]>(data: episodes, result: Result.success))
             case .failure(let error):
-                callback(Response<[Episode]>(data: [], result: Result.error(message: error.localizedDescription)))
+                callback(Response<[Episode]>(data: [], result: .error(message: error.localizedDescription)))
             }
         }
     }
     
     static func getEpisodeDetail(fromShow show: Show, episode: Episode, callback: @escaping (Response<Episode>) -> ()) {
         guard let slug = show.ids?.slug, let season = episode.season, let episode = episode.number else {
-            callback(Response<Episode>(data: nil, result: Result.error(message: "Invalid request")))
+            callback(Response<Episode>(data: nil, result: .error(message: "Invalid request")))
             return
         }
         
         guard let url = URL(string: Endpoint.episodeDetail(id: slug, season: season, episode: episode).url) else {
-            callback(Response<Episode>(data: nil, result: Result.error(message: "Invalid URL")))
+            callback(Response<Episode>(data: nil, result: .error(message: "Invalid URL")))
             return
         }
         
@@ -70,13 +70,13 @@ struct EpisodeService {
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [String:Any] else {
-                    callback(Response<Episode>(data: nil, result: Result.error(message: "Erro ao parsear")))
+                    callback(Response<Episode>(data: nil, result: .error(message: "Erro ao parsear")))
                     return
                 }
                 
                 callback(Response<Episode>(data: Episode(JSON: data), result: Result.success))
             case .failure(let error):
-                callback(Response<Episode>(data: nil, result: Result.error(message: error.localizedDescription)))
+                callback(Response<Episode>(data: nil, result: .error(message: error.localizedDescription)))
             }
         }
         

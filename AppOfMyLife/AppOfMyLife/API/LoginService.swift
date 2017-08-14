@@ -27,7 +27,7 @@ struct LoginService {
             return
         }
         
-        Network.request(url, method: .post, parameters: params, log: true) { response in
+        Network.request(url, method: .post, parameters: params) { response in
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [String: Any] else {

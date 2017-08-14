@@ -33,12 +33,12 @@ struct ShowDetailService {
 
     static func getShowDetail(forShow show: Show, callback: @escaping (Response<Show>) -> ()) {
         guard let slug = show.ids?.slug else {
-            callback(Response<Show>(data: nil, result: Result.error(message: "Slug not found")))
+            callback(Response<Show>(data: nil, result: .error(message: "Slug not found")))
             return
         }
         
         guard let url = URL(string: Endpoint.showDetail(showId: slug).url) else {
-            callback(Response<Show>(data: nil, result: Result.error(message: "URL invalida")))
+            callback(Response<Show>(data: nil, result: .error(message: "Invalid URL")))
             return
         }
         
@@ -46,74 +46,74 @@ struct ShowDetailService {
             "extended": "full"
         ]
     
-        Network.request(url, method: .get, parameters: params, log: true) { response in
+        Network.request(url, method: .get, parameters: params) { response in
             switch response.result {
             case .success:
-                guard let data = response.result.value as? [String:Any] else {
-                    callback(Response<Show>(data: nil, result: Result.error(message: "Erro ao parsear")))
+                guard let data = response.result.value as? [String: Any] else {
+                    callback(Response<Show>(data: nil, result: .error(message: "Invalid Serialization")))
                     return
                 }
                 
-                callback(Response<Show>(data: Show(JSON: data), result: Result.success))
+                callback(Response<Show>(data: Show(JSON: data), result: .success))
             case .failure(let error):
-                callback(Response<Show>(data: nil, result: Result.error(message: error.localizedDescription)))
+                callback(Response<Show>(data: nil, result: .error(message: error.localizedDescription)))
             }
         }
     }
     
     static func getShowProgress(forShow show: Show, callback: @escaping (Response<Progress>) -> ()) {
         guard let slug = show.ids?.slug else {
-            callback(Response<Progress>(data: nil, result: Result.error(message: "Slug not found")))
+            callback(Response<Progress>(data: nil, result: .error(message: "Slug not found")))
             return
         }
         
         guard let url = URL(string: Endpoint.showProgress(showId: slug).url) else {
-            callback(Response<Progress>(data: nil, result: Result.error(message: "Invalid URL")))
+            callback(Response<Progress>(data: nil, result: .error(message: "Invalid URL")))
             return
         }
         
-        Network.request(url, method: .get, log: true) { response in
+        Network.request(url, method: .get) { response in
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [String: Any] else {
-                    callback(Response<Progress>(data: nil, result: Result.error(message: "Serialization error")))
+                    callback(Response<Progress>(data: nil, result: .error(message: "Serialization error")))
                     return
                 }
                 
-                callback(Response<Progress>(data: Progress(JSON: data), result: Result.success))
+                callback(Response<Progress>(data: Progress(JSON: data), result: .success))
             case .failure(let error):
-                callback(Response<Progress>(data: nil, result: Result.error(message: error.localizedDescription)))
+                callback(Response<Progress>(data: nil, result: .error(message: error.localizedDescription)))
             }
         }
     }
     
     static func getNextEpisode(forShow show: Show, callback: @escaping (Response<Episode>) -> ()) {
         guard let slug = show.ids?.slug else {
-            callback(Response<Episode>(data: nil, result: Result.error(message: "Slug not found")))
+            callback(Response<Episode>(data: nil, result: .error(message: "Slug not found")))
             return
         }
         
         guard let url = URL(string: Endpoint.nextEpisode(showId: slug).url) else {
-            callback(Response<Episode>(data: nil, result: Result.error(message: "Invalid URL")))
+            callback(Response<Episode>(data: nil, result: .error(message: "Invalid URL")))
             return
         }
         
-        Network.request(url, method: .get, log: true) { response in
+        Network.request(url, method: .get) { response in
             switch response.result {
             case .success:
                 if response.response?.statusCode == 204 {
-                    callback(Response<Episode>(data: nil, result: Result.error(message: "Next episode not found")))
+                    callback(Response<Episode>(data: nil, result: .error(message: "Next episode not found")))
                     return
                 }
                 
                 guard let data = response.result.value as? [String: Any] else {
-                    callback(Response<Episode>(data: nil, result: Result.error(message: "Serialization error")))
+                    callback(Response<Episode>(data: nil, result: .error(message: "Serialization error")))
                     return
                 }
                 
                 callback(Response<Episode>(data: Episode(JSON: data), result: Result.success))
             case .failure(let error):
-                callback(Response<Episode>(data: nil, result: Result.error(message: error.localizedDescription)))
+                callback(Response<Episode>(data: nil, result: .error(message: error.localizedDescription)))
             }
         }
     }

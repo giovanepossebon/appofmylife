@@ -26,6 +26,8 @@ protocol EpisodeDetailView: class {
 
 class EpisodeDetailViewController: UIViewController {
     
+    static let identifier = "EpisodeDetailViewController"
+    
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: EpisodeDetailPresenter?

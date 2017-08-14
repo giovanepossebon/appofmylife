@@ -24,4 +24,8 @@ class UserSession {
             return UserDefaults.standard.value(forKey: UserSessionKeys.accessToken) as? String ?? ""
         }
     }
+    
+    func logout() {
+        UserDefaults.standard.removeObject(forKey: UserSessionKeys.accessToken)
+    }
 }

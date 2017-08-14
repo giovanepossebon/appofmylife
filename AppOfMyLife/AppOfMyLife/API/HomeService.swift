@@ -24,22 +24,22 @@ struct HomeService {
         ]
         
         guard let url = URL(string: "\(BASE_URL + Endpoint.scheduledShows)") else {
-            callback(Response<[Schedule]>(data: [], result: Result.error(message: "URL invalida")))
+            callback(Response<[Schedule]>(data: [], result: .error(message: "URL invalida")))
             return
         }
         
-        Network.request(url, method: .get, parameters: params, log: true) { response in
+        Network.request(url, method: .get, parameters: params, log: false) { response in
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [[String:Any]] else {
-                    callback(Response<[Schedule]>(data: [], result: Result.error(message: "Erro ao parsear")))
+                    callback(Response<[Schedule]>(data: [], result: .error(message: "Erro ao parsear")))
                     return
                 }
                 
                 let schedule = data.flatMap { Schedule(JSON: $0) }
                 callback(Response<[Schedule]>(data: schedule, result: Result.success))
             case .failure(let error):
-                callback(Response<[Schedule]>(data: [], result: Result.error(message: error.localizedDescription)))
+                callback(Response<[Schedule]>(data: [], result: .error(message: error.localizedDescription)))
             }
         }
     }

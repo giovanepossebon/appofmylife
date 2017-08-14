@@ -79,6 +79,15 @@ extension HomeViewController {
 
 extension HomeViewController {
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Collection", bundle: nil)
+        if let item = schedule?[indexPath.row], let episodeDetailViewController = storyboard.instantiateViewController(withIdentifier: "EpisodeDetailViewController") as? EpisodeDetailViewController {
+            episodeDetailViewController.show = item.show
+            episodeDetailViewController.episode = item.episode
+            navigationController?.pushViewController(episodeDetailViewController, animated: true)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ScheduleCell.height
     }
