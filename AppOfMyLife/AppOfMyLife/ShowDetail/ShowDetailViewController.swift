@@ -64,6 +64,16 @@ class ShowDetailViewController: UIViewController {
         presenter?.loadNextEpisode(fromShow: show)
     }
     
+    static func instance(withShow show: Show) -> ShowDetailViewController? {
+        let viewController: ShowDetailViewController? = ShowDetailViewController.create(storyboardName: "Collection")
+        viewController?.setup(show: show)
+        return viewController
+    }
+    
+    private func setup(show: Show) {
+        self.show = show
+    }
+    
     private func setupTableView() {
         tableView.register(UINib(nibName: ImageCell.nibName, bundle: nil), forCellReuseIdentifier: ImageCell.identifier)
         tableView.register(UINib(nibName: DescriptionCell.nibName, bundle: nil), forCellReuseIdentifier: DescriptionCell.identifier)
@@ -207,16 +217,13 @@ extension ShowDetailViewController: UITableViewDelegate {
     }
     
     private func navigateToEpisodeDetail() {
-        if let nextEpisode = nextEpisode, let episodeDetailViewController = storyboard?.instantiateViewController(withIdentifier: "EpisodeDetailViewController") as? EpisodeDetailViewController {
-            episodeDetailViewController.episode = nextEpisode
-            episodeDetailViewController.show = show
+        if let nextEpisode = nextEpisode, let episodeDetailViewController = EpisodeDetailViewController.instance(withShow: show, episode: nextEpisode) {
             navigationController?.pushViewController(episodeDetailViewController, animated: true)
         }
     }
     
     private func navigateToSeasonList() {
-        if let seasonsListViewController = storyboard?.instantiateViewController(withIdentifier: "SeasonsListViewController") as? SeasonsListViewController {
-            seasonsListViewController.show = show
+        if let seasonsListViewController = SeasonsListViewController.instance(withShow: show) {
             navigationController?.pushViewController(seasonsListViewController, animated: true)
         }
     }

@@ -35,6 +35,17 @@ class EpisodesListViewController: UITableViewController {
         presenter.loadEpisodeList(fromShow: show, season: season)
     }
     
+    static func instance(withShow show: Show, season: Season) -> EpisodesListViewController? {
+        let viewController: EpisodesListViewController? = EpisodesListViewController.create(storyboardName: "Collection")
+        viewController?.setup(show: show, season: season)
+        return viewController
+    }
+    
+    private func setup(show: Show, season: Season) {
+        self.show = show
+        self.season = season
+    }
+    
     private func setupTableView() {
         tableView.register(UINib(nibName: TitleWithAccessoryCell.nibName, bundle: nil), forCellReuseIdentifier: TitleWithAccessoryCell.identifier)
     }
@@ -76,12 +87,8 @@ extension EpisodesListViewController {
 extension EpisodesListViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "EpisodeDetailViewController") as? EpisodeDetailViewController {
-            if let episode = episodes?[indexPath.row] {
-                detailViewController.show = show
-                detailViewController.episode = episode
-                navigationController?.pushViewController(detailViewController, animated: true)
-            }
+        if let episode = episodes?[indexPath.row], let detailViewController = EpisodeDetailViewController.instance(withShow: show, episode: episode) {
+            navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
     

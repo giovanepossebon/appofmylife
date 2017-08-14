@@ -78,8 +78,7 @@ extension CollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let selectedShow = collections?[indexPath.row].show {
-            if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "ShowDetailViewController") as? ShowDetailViewController {
-                detailViewController.show = selectedShow
+            if let detailViewController = ShowDetailViewController.instance(withShow: selectedShow) {
                 navigationController?.pushViewController(detailViewController, animated: true)
             }
         }

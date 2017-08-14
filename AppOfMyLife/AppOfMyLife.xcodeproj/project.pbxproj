@@ -11,6 +11,8 @@
 		5F169A241AAC8FCE6D016480 /* Pods_AppOfMyLifeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D7AA866A5CBDD33DFE23F6 /* Pods_AppOfMyLifeTests.framework */; };
 		9F12A8A61F3BE84300180307 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12A8A51F3BE84300180307 /* LoginService.swift */; };
 		9F12A8AB1F3BEBC800180307 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12A8AA1F3BEBC800180307 /* UserSession.swift */; };
+		9F27E0921F41597C00C96444 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E0911F41597C00C96444 /* UIViewController+Extension.swift */; };
+		9F27E0941F4159BE00C96444 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E0931F4159BE00C96444 /* UIStoryboard+Extension.swift */; };
 		9F3AEFF81F3A9B5C00EAE651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3AEFF71F3A9B5C00EAE651 /* AppDelegate.swift */; };
 		9F3AEFFD1F3A9B5C00EAE651 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3AEFFB1F3A9B5C00EAE651 /* Login.storyboard */; };
 		9F3AEFFF1F3A9B5C00EAE651 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3AEFFE1F3A9B5C00EAE651 /* Assets.xcassets */; };
@@ -52,7 +54,7 @@
 		9F7763EB1F3D462D00E9E885 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763EA1F3D462D00E9E885 /* Show.swift */; };
 		9F7763ED1F3D467500E9E885 /* ExternalID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763EC1F3D467500E9E885 /* ExternalID.swift */; };
 		9F7763EF1F3D47FB00E9E885 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763EE1F3D47FB00E9E885 /* HomeService.swift */; };
-		9F7763F11F3D48D300E9E885 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763F01F3D48D300E9E885 /* DateExtension.swift */; };
+		9F7763F11F3D48D300E9E885 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763F01F3D48D300E9E885 /* Date+Extension.swift */; };
 		9F7763F31F3D49EA00E9E885 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763F21F3D49EA00E9E885 /* Schedule.swift */; };
 		9F7763F61F3E922300E9E885 /* DateExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763F51F3E922300E9E885 /* DateExtensionTest.swift */; };
 		9F7763F81F3E985500E9E885 /* TitleHeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7763F71F3E985500E9E885 /* TitleHeaderSection.swift */; };
@@ -111,6 +113,8 @@
 		8A951AC6685FABD4EE5DE7EB /* Pods-AppOfMyLifeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppOfMyLifeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppOfMyLifeTests/Pods-AppOfMyLifeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F12A8A51F3BE84300180307 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginService.swift; path = API/LoginService.swift; sourceTree = "<group>"; };
 		9F12A8AA1F3BEBC800180307 /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSession.swift; path = UserSession/UserSession.swift; sourceTree = "<group>"; };
+		9F27E0911F41597C00C96444 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extension.swift"; path = "Extensions/UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		9F27E0931F4159BE00C96444 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+Extension.swift"; path = "Extensions/UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		9F3AEFF41F3A9B5C00EAE651 /* AppOfMyLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppOfMyLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3AEFF71F3A9B5C00EAE651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F3AEFFC1F3A9B5C00EAE651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -158,7 +162,7 @@
 		9F7763EA1F3D462D00E9E885 /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Show.swift; path = Model/Show.swift; sourceTree = "<group>"; };
 		9F7763EC1F3D467500E9E885 /* ExternalID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExternalID.swift; path = Model/ExternalID.swift; sourceTree = "<group>"; };
 		9F7763EE1F3D47FB00E9E885 /* HomeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeService.swift; path = API/HomeService.swift; sourceTree = "<group>"; };
-		9F7763F01F3D48D300E9E885 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = Extensions/DateExtension.swift; sourceTree = "<group>"; };
+		9F7763F01F3D48D300E9E885 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extension.swift"; path = "Extensions/Date+Extension.swift"; sourceTree = "<group>"; };
 		9F7763F21F3D49EA00E9E885 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = Model/Schedule.swift; sourceTree = "<group>"; };
 		9F7763F51F3E922300E9E885 /* DateExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensionTest.swift; path = Extensions/DateExtensionTest.swift; sourceTree = "<group>"; };
 		9F7763F71F3E985500E9E885 /* TitleHeaderSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleHeaderSection.swift; path = Home/Cells/TitleHeaderSection.swift; sourceTree = "<group>"; };
@@ -262,6 +266,13 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		9F27E0951F415F2600C96444 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 		9F3AEFEB1F3A9B5C00EAE651 = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +316,7 @@
 		9F3AF00B1F3A9B5C00EAE651 /* AppOfMyLifeTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F27E0951F415F2600C96444 /* Tests */,
 				9F7763F41F3E91FB00E9E885 /* Extensions */,
 				9F3AF00C1F3A9B5C00EAE651 /* AppOfMyLifeTests.swift */,
 				9F3AF00E1F3A9B5C00EAE651 /* Info.plist */,
@@ -333,7 +345,9 @@
 		9F43312F1F3AB7C800BA4331 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9F7763F01F3D48D300E9E885 /* DateExtension.swift */,
+				9F7763F01F3D48D300E9E885 /* Date+Extension.swift */,
+				9F27E0911F41597C00C96444 /* UIViewController+Extension.swift */,
+				9F27E0931F4159BE00C96444 /* UIStoryboard+Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -807,6 +821,7 @@
 				9F433AAD1F3F60B200A5E562 /* EpisodeDetailViewController.swift in Sources */,
 				9F7764021F3EA18F00E9E885 /* CollectionService.swift in Sources */,
 				9F7763F31F3D49EA00E9E885 /* Schedule.swift in Sources */,
+				9F27E0941F4159BE00C96444 /* UIStoryboard+Extension.swift in Sources */,
 				9F433AB61F40C24D00A5E562 /* SeasonsListPresenter.swift in Sources */,
 				9F433AC11F40E3F400A5E562 /* EpisodeDateCell.swift in Sources */,
 				9F12A8AB1F3BEBC800180307 /* UserSession.swift in Sources */,
@@ -824,7 +839,7 @@
 				9F4331391F3AC49900BA4331 /* LoginViewController.swift in Sources */,
 				9F7764101F3EBEE200E9E885 /* ShowDetailViewController.swift in Sources */,
 				9F7763E51F3D429A00E9E885 /* HomePresenter.swift in Sources */,
-				9F7763F11F3D48D300E9E885 /* DateExtension.swift in Sources */,
+				9F7763F11F3D48D300E9E885 /* Date+Extension.swift in Sources */,
 				9F5C9E2A1F411B8F0071B6C6 /* ProfilePresenter.swift in Sources */,
 				9F433ABD1F40D94300A5E562 /* EpisodesListPresenter.swift in Sources */,
 				9F7763FE1F3EA03400E9E885 /* CollectionViewController.swift in Sources */,
@@ -848,6 +863,7 @@
 				9F433AB81F40C4A600A5E562 /* SeasonService.swift in Sources */,
 				9F433AAF1F3F60E100A5E562 /* EpisodeDetailPresenter.swift in Sources */,
 				9F433ABB1F40D85300A5E562 /* EpisodesListViewController.swift in Sources */,
+				9F27E0921F41597C00C96444 /* UIViewController+Extension.swift in Sources */,
 				9F5C9E281F411B490071B6C6 /* ProfileViewController.swift in Sources */,
 				9F7764141F3EC23B00E9E885 /* ImageCell.swift in Sources */,
 				9F77641C1F3EC7BA00E9E885 /* ShowDetailService.swift in Sources */,

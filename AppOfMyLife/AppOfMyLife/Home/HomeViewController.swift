@@ -80,10 +80,11 @@ extension HomeViewController {
 extension HomeViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Collection", bundle: nil)
-        if let item = schedule?[indexPath.row], let episodeDetailViewController = storyboard.instantiateViewController(withIdentifier: "EpisodeDetailViewController") as? EpisodeDetailViewController {
-            episodeDetailViewController.show = item.show
-            episodeDetailViewController.episode = item.episode
+        guard let item = schedule?[indexPath.row], let show = item.show, let episode = item.episode else {
+            return
+        }
+        
+        if let episodeDetailViewController = EpisodeDetailViewController.instance(withShow: show, episode: episode) {
             navigationController?.pushViewController(episodeDetailViewController, animated: true)
         }
     }

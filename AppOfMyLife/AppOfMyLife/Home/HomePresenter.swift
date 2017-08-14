@@ -25,7 +25,7 @@ class HomePresenter: HomeViewPresenter {
             switch response.result{
             case .success:
                 guard let schedule = response.data else {
-                    self.view.onLoadFailed(error: "Vazio")
+                    self.view.onLoadFailed(error: "Invalid data")
                     return
                 }
                 

@@ -63,6 +63,17 @@ class EpisodeDetailViewController: UIViewController {
         presenter?.loadHistory(fromEpisode: episode)
     }
     
+    static func instance(withShow show: Show, episode: Episode) -> EpisodeDetailViewController? {
+        let viewController: EpisodeDetailViewController? = EpisodeDetailViewController.create(storyboardName: "Collection")
+        viewController?.setup(show: show, episode: episode)
+        return viewController
+    }
+    
+    private func setup(show: Show, episode: Episode) {
+        self.show = show
+        self.episode = episode
+    }
+    
     private func setupTableView() {
         tableView.register(UINib(nibName: ImageCell.nibName, bundle: nil), forCellReuseIdentifier: ImageCell.identifier)
         tableView.register(UINib(nibName: DescriptionCell.nibName, bundle: nil), forCellReuseIdentifier: DescriptionCell.identifier)
