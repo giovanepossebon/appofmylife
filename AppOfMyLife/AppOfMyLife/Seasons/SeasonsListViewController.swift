@@ -34,6 +34,16 @@ class SeasonsListViewController: UITableViewController {
         presenter.loadSeasonList(fromShow: show)
     }
     
+    static func instance(withShow show: Show) -> SeasonsListViewController? {
+        let viewController: SeasonsListViewController? = SeasonsListViewController.create(storyboardName: "Collection")
+        viewController?.setup(show: show)
+        return viewController
+    }
+    
+    private func setup(show: Show) {
+        self.show = show
+    }
+    
     private func setupTableView() {
         tableView.register(UINib(nibName: TitleWithAccessoryCell.nibName, bundle: nil), forCellReuseIdentifier: TitleWithAccessoryCell.identifier)
     }
@@ -79,12 +89,8 @@ extension SeasonsListViewController {
 extension SeasonsListViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let episodeListViewController = storyboard?.instantiateViewController(withIdentifier: "EpisodesListViewController") as? EpisodesListViewController {
-            if let season = seasons?[indexPath.row] {
-                episodeListViewController.show = show
-                episodeListViewController.season = season
-                navigationController?.pushViewController(episodeListViewController, animated: true)
-            }
+        if let season = seasons?[indexPath.row], let episodeListViewController = EpisodesListViewController.instance(withShow: show, season: season) {
+            navigationController?.pushViewController(episodeListViewController, animated: true)
         }
     }
     
