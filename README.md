@@ -8,7 +8,7 @@
 - [x] List of my series
 - [x] Episode informations
 - [x] Mark episode as watched
-- [ ] Profile
+- [x] Profile
 - [ ] Search
 - [ ] Add TV show to Watchlist
 - [ ] Offline watchlist
