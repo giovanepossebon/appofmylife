@@ -11,6 +11,11 @@ target 'AppOfMyLife' do
   pod 'ObjectMapper', '~> 2.2'
 
   target 'AppOfMyLifeTests' do
+      
+      pod 'Quick'
+      pod 'Nimble'
+      pod 'Mockingjay'
+      
     inherit! :search_paths
     # Pods for testing
   end

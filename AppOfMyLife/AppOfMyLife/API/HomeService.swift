@@ -9,10 +9,10 @@
 import Foundation
 
 private struct Endpoint {
-    static let scheduledShows = "/calendars/my/shows/"   // http://docs.trakt.apiary.io/#reference/calendars/get-shows
+    static let scheduledShows = "/calendars/my/shows/"
 }
 
-struct HomeService {
+struct HomeService: HomeApiClient {
     
     static let BASE_URL = TraktAPI.URLs.baseURL
     static let defaultNumberOfDays = 14

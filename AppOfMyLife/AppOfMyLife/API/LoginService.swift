@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-struct LoginService {
+struct LoginService: LoginApiClient {
     
     static let BASE_URL = TraktAPI.URLs.baseURL
     

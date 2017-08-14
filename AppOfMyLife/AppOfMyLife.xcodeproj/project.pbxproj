@@ -13,11 +13,14 @@
 		9F12A8AB1F3BEBC800180307 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12A8AA1F3BEBC800180307 /* UserSession.swift */; };
 		9F27E0921F41597C00C96444 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E0911F41597C00C96444 /* UIViewController+Extension.swift */; };
 		9F27E0941F4159BE00C96444 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E0931F4159BE00C96444 /* UIStoryboard+Extension.swift */; };
+		9F27E0981F4162A200C96444 /* LoginApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E0971F4162A200C96444 /* LoginApiClient.swift */; };
+		9F27E09A1F4162DA00C96444 /* HomeApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E0991F4162DA00C96444 /* HomeApiClient.swift */; };
+		9F27E09C1F41636B00C96444 /* HomeApiClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E09B1F41636B00C96444 /* HomeApiClientSpec.swift */; };
+		9F27E09F1F41651800C96444 /* GetCalendarSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F27E09E1F41651800C96444 /* GetCalendarSuccess.json */; };
 		9F3AEFF81F3A9B5C00EAE651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3AEFF71F3A9B5C00EAE651 /* AppDelegate.swift */; };
 		9F3AEFFD1F3A9B5C00EAE651 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3AEFFB1F3A9B5C00EAE651 /* Login.storyboard */; };
 		9F3AEFFF1F3A9B5C00EAE651 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3AEFFE1F3A9B5C00EAE651 /* Assets.xcassets */; };
 		9F3AF0021F3A9B5C00EAE651 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3AF0001F3A9B5C00EAE651 /* LaunchScreen.storyboard */; };
-		9F3AF00D1F3A9B5C00EAE651 /* AppOfMyLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3AF00C1F3A9B5C00EAE651 /* AppOfMyLifeTests.swift */; };
 		9F3AF0181F3A9B5C00EAE651 /* AppOfMyLifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3AF0171F3A9B5C00EAE651 /* AppOfMyLifeUITests.swift */; };
 		9F4331341F3ABEFB00BA4331 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4331331F3ABEFB00BA4331 /* Network.swift */; };
 		9F4331371F3AC0E700BA4331 /* TraktAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4331361F3AC0E700BA4331 /* TraktAPI.swift */; };
@@ -115,6 +118,10 @@
 		9F12A8AA1F3BEBC800180307 /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSession.swift; path = UserSession/UserSession.swift; sourceTree = "<group>"; };
 		9F27E0911F41597C00C96444 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extension.swift"; path = "Extensions/UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		9F27E0931F4159BE00C96444 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+Extension.swift"; path = "Extensions/UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
+		9F27E0971F4162A200C96444 /* LoginApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginApiClient.swift; path = API/LoginApiClient.swift; sourceTree = "<group>"; };
+		9F27E0991F4162DA00C96444 /* HomeApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeApiClient.swift; path = API/HomeApiClient.swift; sourceTree = "<group>"; };
+		9F27E09B1F41636B00C96444 /* HomeApiClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeApiClientSpec.swift; sourceTree = "<group>"; };
+		9F27E09E1F41651800C96444 /* GetCalendarSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = GetCalendarSuccess.json; path = Stubs/GetCalendarSuccess.json; sourceTree = "<group>"; };
 		9F3AEFF41F3A9B5C00EAE651 /* AppOfMyLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppOfMyLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3AEFF71F3A9B5C00EAE651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F3AEFFC1F3A9B5C00EAE651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -122,7 +129,6 @@
 		9F3AF0011F3A9B5C00EAE651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F3AF0031F3A9B5C00EAE651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F3AF0081F3A9B5C00EAE651 /* AppOfMyLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppOfMyLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F3AF00C1F3A9B5C00EAE651 /* AppOfMyLifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOfMyLifeTests.swift; sourceTree = "<group>"; };
 		9F3AF00E1F3A9B5C00EAE651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F3AF0131F3A9B5C00EAE651 /* AppOfMyLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppOfMyLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3AF0171F3A9B5C00EAE651 /* AppOfMyLifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOfMyLifeUITests.swift; sourceTree = "<group>"; };
@@ -269,8 +275,33 @@
 		9F27E0951F415F2600C96444 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				9F27E09B1F41636B00C96444 /* HomeApiClientSpec.swift */,
 			);
 			name = Tests;
+			sourceTree = "<group>";
+		};
+		9F27E0961F41625600C96444 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9F12A8A51F3BE84300180307 /* LoginService.swift */,
+				9F7763EE1F3D47FB00E9E885 /* HomeService.swift */,
+				9F7764011F3EA18F00E9E885 /* CollectionService.swift */,
+				9F77641B1F3EC7BA00E9E885 /* ShowDetailService.swift */,
+				9F433AB01F3F61F800A5E562 /* EpisodeService.swift */,
+				9F433AB71F40C4A600A5E562 /* SeasonService.swift */,
+				9F433AC41F40F01F00A5E562 /* HistoryService.swift */,
+				9F5C9E2B1F411CDA0071B6C6 /* UserService.swift */,
+				9F98A6111F412D7000035FBA /* StatsService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		9F27E09D1F41647000C96444 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				9F27E09E1F41651800C96444 /* GetCalendarSuccess.json */,
+			);
+			name = Stubs;
 			sourceTree = "<group>";
 		};
 		9F3AEFEB1F3A9B5C00EAE651 = {
@@ -298,6 +329,7 @@
 		9F3AEFF61F3A9B5C00EAE651 /* AppOfMyLife */ = {
 			isa = PBXGroup;
 			children = (
+				9F27E0961F41625600C96444 /* Service */,
 				9F7764061F3EA38900E9E885 /* Scenes */,
 				9F7763FB1F3E98EC00E9E885 /* CustomCells */,
 				9F7763CF1F3D33B300E9E885 /* Storyboards */,
@@ -316,9 +348,9 @@
 		9F3AF00B1F3A9B5C00EAE651 /* AppOfMyLifeTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F27E09D1F41647000C96444 /* Stubs */,
 				9F27E0951F415F2600C96444 /* Tests */,
 				9F7763F41F3E91FB00E9E885 /* Extensions */,
-				9F3AF00C1F3A9B5C00EAE651 /* AppOfMyLifeTests.swift */,
 				9F3AF00E1F3A9B5C00EAE651 /* Info.plist */,
 			);
 			path = AppOfMyLifeTests;
@@ -364,15 +396,8 @@
 			isa = PBXGroup;
 			children = (
 				9F4331361F3AC0E700BA4331 /* TraktAPI.swift */,
-				9F12A8A51F3BE84300180307 /* LoginService.swift */,
-				9F7763EE1F3D47FB00E9E885 /* HomeService.swift */,
-				9F7764011F3EA18F00E9E885 /* CollectionService.swift */,
-				9F77641B1F3EC7BA00E9E885 /* ShowDetailService.swift */,
-				9F433AB01F3F61F800A5E562 /* EpisodeService.swift */,
-				9F433AB71F40C4A600A5E562 /* SeasonService.swift */,
-				9F433AC41F40F01F00A5E562 /* HistoryService.swift */,
-				9F5C9E2B1F411CDA0071B6C6 /* UserService.swift */,
-				9F98A6111F412D7000035FBA /* StatsService.swift */,
+				9F27E0971F4162A200C96444 /* LoginApiClient.swift */,
+				9F27E0991F4162DA00C96444 /* HomeApiClient.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -658,6 +683,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F27E09F1F41651800C96444 /* GetCalendarSuccess.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,6 +870,8 @@
 				9F433ABD1F40D94300A5E562 /* EpisodesListPresenter.swift in Sources */,
 				9F7763FE1F3EA03400E9E885 /* CollectionViewController.swift in Sources */,
 				9F7763EF1F3D47FB00E9E885 /* HomeService.swift in Sources */,
+				9F27E0981F4162A200C96444 /* LoginApiClient.swift in Sources */,
+				9F27E09A1F4162DA00C96444 /* HomeApiClient.swift in Sources */,
 				9F7763D81F3D38CA00E9E885 /* HomeViewController.swift in Sources */,
 				9F7763EB1F3D462D00E9E885 /* Show.swift in Sources */,
 				9F433AC51F40F01F00A5E562 /* HistoryService.swift in Sources */,
@@ -874,8 +902,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F3AF00D1F3A9B5C00EAE651 /* AppOfMyLifeTests.swift in Sources */,
 				9F7763F61F3E922300E9E885 /* DateExtensionTest.swift in Sources */,
+				9F27E09C1F41636B00C96444 /* HomeApiClientSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
