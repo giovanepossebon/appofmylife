@@ -31,7 +31,7 @@ class ShowDetailApiClientSpec: QuickSpec {
                     })
                 }
                 
-                it("return schedule") {
+                it("return showProgress") {
                     expect(returnedProgress).toEventuallyNot(beNil())
                     expect(returnedProgress?.aired) == 8
                     expect(returnedProgress?.completed) == 6

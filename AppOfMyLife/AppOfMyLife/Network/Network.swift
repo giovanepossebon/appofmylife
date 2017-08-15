@@ -22,8 +22,8 @@ class Network {
                 logAlamofireRequest(response: response)
             }
             
-            HUD.hide()
             completion(response)
+            HUD.hide()
         })
     }
     

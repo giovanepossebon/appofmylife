@@ -23,7 +23,7 @@ struct LoginService: LoginApiClient {
         ]
         
         guard let url = URL(string: "\(BASE_URL)/oauth/token") else {
-            callback(Response<Auth>(data: nil, result: Result.error(message: "URL invalida")))
+            callback(Response<Auth>(data: nil, result: Result.error(message: "Invalid URL")))
             return
         }
         
@@ -31,7 +31,7 @@ struct LoginService: LoginApiClient {
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [String: Any] else {
-                    callback(Response<Auth>(data: nil, result: Result.error(message: "Erro ao parsear")))
+                    callback(Response<Auth>(data: nil, result: Result.error(message: "Invalid Serialization")))
                     return
                 }
                 

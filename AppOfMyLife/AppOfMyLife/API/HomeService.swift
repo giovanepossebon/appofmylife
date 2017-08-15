@@ -31,7 +31,7 @@ struct HomeService: HomeApiClient {
     static func getMySchedule(request: HomeServiceRequest, callback: @escaping (Response<[Schedule]>) -> ()) {
 
         guard let url = URL(string: Endpoint.scheduledShows(request: request).url) else {
-            callback(Response<[Schedule]>(data: [], result: .error(message: "URL invalida")))
+            callback(Response<[Schedule]>(data: [], result: .error(message: "Invalid URL")))
             return
         }
         
@@ -39,7 +39,7 @@ struct HomeService: HomeApiClient {
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [[String:Any]] else {
-                    callback(Response<[Schedule]>(data: [], result: .error(message: "Erro ao parsear")))
+                    callback(Response<[Schedule]>(data: [], result: .error(message: "Invalid Serialization")))
                     return
                 }
                 

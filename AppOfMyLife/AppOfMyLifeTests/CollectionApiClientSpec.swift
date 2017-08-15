@@ -28,7 +28,7 @@ class CollectionApiClientSpec: QuickSpec {
                     })
                 }
                 
-                it("return schedule") {
+                it("return collection") {
                     expect(returnedShowCollection).toEventuallyNot(beNil())
                     expect(returnedShowCollection?.first?.show?.title) == "Rick and Morty"
                     expect(returnedShowCollection?.first?.show?.year) == 2013

@@ -35,7 +35,7 @@ struct HistoryService: HistoryApiClient {
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [[String: Any]] else {
-                    callback(Response<[History]>(data: nil, result: .error(message: "Serialization failed")))
+                    callback(Response<[History]>(data: nil, result: .error(message: "Invalid Serialization")))
                     return
                 }
                 

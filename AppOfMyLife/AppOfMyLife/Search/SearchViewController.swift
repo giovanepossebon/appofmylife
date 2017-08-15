@@ -36,7 +36,6 @@ class SearchViewController: UICollectionViewController {
     }
     
     private func setupSearchBar() {
-        //Search at the top
         self.searchController = UISearchController(searchResultsController:  nil)
         
         self.searchController.delegate = self
@@ -45,7 +44,6 @@ class SearchViewController: UICollectionViewController {
         self.searchController.hidesNavigationBarDuringPresentation = false
         self.searchController.dimsBackgroundDuringPresentation = true
         self.searchController.obscuresBackgroundDuringPresentation = false
-        
         
         searchController.searchBar.becomeFirstResponder()
         self.navigationItem.titleView = searchController.searchBar
@@ -103,7 +101,7 @@ extension SearchViewController {
     
 }
 
-// MARK: CollectionViewDelegate
+// MARK: CollectionViewDelegateFlowLayout
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     
