@@ -15,11 +15,24 @@ class CollectionItemCell: UICollectionViewCell {
     static let height: CGFloat = 250
 
     @IBOutlet weak var imageThumb: UIImageView!
+    @IBOutlet weak var episodeName: UILabel!
  
     override func awakeFromNib() {
         super.awakeFromNib()
         setupDropShadow()
+        resetUI()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        resetUI()
+    }
+    
+    private func resetUI() {
+        imageThumb.image = nil
+        episodeName.text = nil
+    }
+    
     
     private func setupDropShadow() {
         layer.shadowColor = UIColor.black.cgColor
@@ -30,7 +43,15 @@ class CollectionItemCell: UICollectionViewCell {
         layer.masksToBounds = false
     }
     
+    func populate(withShow show: Show) {
+        episodeName.text = show.title
+        if let tvdbId = show.ids?.tvdb, let url = URL(string: ShowBannerStyle.portrait(id: tvdbId, variation: 1).url) {
+            imageThumb.af_setImage(withURL: url)
+        }
+    }
+    
     func populate(withCollection collection: ShowCollection) {
+        episodeName.text = collection.show?.title
         if let tvdbId = collection.show?.ids?.tvdb, let url = URL(string: ShowBannerStyle.portrait(id: tvdbId, variation: 1).url) {
             imageThumb.af_setImage(withURL: url)
         }

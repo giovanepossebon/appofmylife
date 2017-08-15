@@ -16,6 +16,20 @@ class ImageCell: UITableViewCell {
     
     @IBOutlet weak var fullImageView: UIImageView!
  
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        resetUI()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        resetUI()
+    }
+    
+    private func resetUI() {
+        fullImageView.image = nil
+    }
+    
     func populate(withImageUrl imageUrl: String?) {
         if let url = imageUrl, let imageUrl = URL(string: url) {
             fullImageView.af_setImage(withURL: imageUrl)
