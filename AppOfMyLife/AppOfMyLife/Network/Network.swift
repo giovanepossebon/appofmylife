@@ -8,10 +8,13 @@
 
 import Foundation
 import Alamofire
+import PKHUD
 
 class Network {
     
     class func request(_ url: URL, method: HTTPMethod = .get, parameters: [String: Any]? = nil, log: Bool = true, encoding: ParameterEncoding = JSONEncoding.default, completion: @escaping (DataResponse<Any>) -> Void) {
+        
+        HUD.show(.progress)
         
         Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: defaultHeaders()).responseJSON(completionHandler: { response in
             
@@ -19,6 +22,7 @@ class Network {
                 logAlamofireRequest(response: response)
             }
             
+            HUD.hide()
             completion(response)
         })
     }
