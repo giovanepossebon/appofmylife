@@ -1,4 +1,11 @@
-# appofmylife
+### AppOfMyLife
+
+This was an app created based on the trakt.tv API data
+
+## Specifications
+
+- Swift 3
+- iOS 10.3+
 
 ### Implemented Features:
 
@@ -11,4 +18,4 @@
 - [x] Profile
 - [x] Search
 - [ ] Add TV show to Watchlist
-- [ ] Offline watchlist
+- [ ] Offline data
