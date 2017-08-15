@@ -2,6 +2,10 @@
 
 This was an app created based on the trakt.tv API data
 
+## Screenshot
+
+[1](AppOfMyLife/ScreenShots/1.png)
+
 ## Specifications
 
 - Swift 3
