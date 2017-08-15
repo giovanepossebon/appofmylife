@@ -10,25 +10,23 @@ import Foundation
 import Alamofire
 
 private enum Endpoint {
-    // http://docs.trakt.apiary.io/#reference/sync/get-history/get-watched-history
-    case getHistory(id: Int)
-    // http://docs.trakt.apiary.io/#reference/sync/add-to-history/add-items-to-watched-history
+    case getHistory(request: HistoryRequest)
     case addToHistory
     
     var url: String {
         switch self {
-        case .getHistory(id: let id):
-            return TraktAPI.URLs.baseURL + "sync/history/episodes/\(id)"
+        case .getHistory(request: let request):
+            return TraktAPI.URLs.baseURL + "sync/history/episodes/\(request.traktId)"
         case .addToHistory:
             return TraktAPI.URLs.baseURL + "sync/history"
         }
     }
 }
 
-struct HistoryService {
+struct HistoryService: HistoryApiClient {
     
-    static func getEpisodeHistory(episode: Episode, callback: @escaping (Response<[History]>) -> ()) {
-        guard let id = episode.ids?.trakt, let url = URL(string: Endpoint.getHistory(id: id).url) else {
+    static func getEpisodeHistory(request: HistoryRequest, callback: @escaping (Response<[History]>) -> ()) {
+        guard let url = URL(string: Endpoint.getHistory(request: request).url) else {
             callback(Response<[History]>(data: nil, result: .error(message: "Invalid URL")))
             return
         }

@@ -17,7 +17,7 @@ class ProgressCell: UITableViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusProgressView: UIProgressView!
     
-    func populate(withProgress progress: Progress) {
+    func populate(withProgress progress: ShowProgress) {
         if let completed = progress.completed, let aired = progress.aired {
             statusLabel.text = "\(completed)/\(aired)"
             statusProgressView.setProgress(Float(completed) / Float(aired), animated: true)

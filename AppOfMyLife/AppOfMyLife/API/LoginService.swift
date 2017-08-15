@@ -13,13 +13,13 @@ struct LoginService: LoginApiClient {
     
     static let BASE_URL = TraktAPI.URLs.baseURL
     
-    static func getToken(code: String, callback: @escaping (Response<Auth>) -> ()) {
+    static func getToken(request: LoginRequest, callback: @escaping (Response<Auth>) -> ()) {
         let params = [
-            "code": code,
-            "client_id": TraktAPI.clientId,
-            "client_secret": TraktAPI.clientSecret,
-            "redirect_uri": TraktAPI.redirectUri,
-            "grant_type": "authorization_code"
+            "code": request.code,
+            "client_id": request.clientId,
+            "client_secret": request.clientSecret,
+            "redirect_uri": request.redirectUri,
+            "grant_type": request.grantType
         ]
         
         guard let url = URL(string: "\(BASE_URL)/oauth/token") else {

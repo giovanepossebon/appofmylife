@@ -22,7 +22,7 @@ private enum DetailRows: Int {
 
 protocol ShowDetailView: class {
     func onShowDetailLoaded(showDetail: Show)
-    func onShowProgressLoaded(showProgress: Progress)
+    func onShowProgressLoaded(showProgress: ShowProgress)
     func onNextEpisodeLoaded(nextEpisode: Episode)
     func onError(error: String)
 }
@@ -40,7 +40,7 @@ class ShowDetailViewController: UIViewController {
         }
     }
     
-    var showProgress: Progress? {
+    var showProgress: ShowProgress? {
         didSet {
             reloadTableView(forDetailRow: .progress)
         }
@@ -95,7 +95,7 @@ extension ShowDetailViewController: ShowDetailView {
         self.showDetail = showDetail
     }
     
-    func onShowProgressLoaded(showProgress: Progress) {
+    func onShowProgressLoaded(showProgress: ShowProgress) {
         self.showProgress = showProgress
     }
     

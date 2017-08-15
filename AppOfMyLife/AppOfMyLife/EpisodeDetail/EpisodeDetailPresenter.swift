@@ -23,7 +23,11 @@ class EpisodeDetailPresenter: EpisodeDetailViewPresenter {
     }
     
     func loadEpisodeDetail(fromShow show: Show, episode: Episode) {
-        EpisodeService.getEpisodeDetail(fromShow: show, episode: episode) { response in
+        let request = EpisodeDetailRequest(slug: show.ids?.slug ?? "",
+                                     seasonNumber: episode.season ?? 0,
+                                     episodeNumber: episode.number ?? 0)
+        
+        EpisodeService.getEpisodeDetail(request: request) { response in
             switch response.result {
             case .success:
                 guard let episodeDetail = response.data else {
@@ -39,7 +43,9 @@ class EpisodeDetailPresenter: EpisodeDetailViewPresenter {
     }
     
     func loadHistory(fromEpisode episode: Episode) {
-        HistoryService.getEpisodeHistory(episode: episode) { response in
+        let request = HistoryRequest(traktId: episode.ids?.trakt ?? 0)
+        
+        HistoryService.getEpisodeHistory(request: request) { response in
             switch response.result {
             case .success:
                 guard let episodeHistory = response.data?.first else {

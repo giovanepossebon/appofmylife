@@ -10,29 +10,23 @@ import Foundation
 import Alamofire
 
 private enum Endpoint {
-    // http://docs.trakt.apiary.io/#reference/episodes/summary/get-a-single-episode-for-a-show
-    case episodeDetail(id: String, season: Int, episode: Int)
-    case episodesList(id: String, season: Int)
+    case episodeDetail(request: EpisodeDetailRequest)
+    case episodesList(request: EpisodeListRequest)
     
     var url: String {
         switch self {
-        case .episodeDetail(id: let id, season: let season, episode: let episode):
-            return TraktAPI.URLs.baseURL + "shows/\(id)/seasons/\(season)/episodes/\(episode)"
-        case .episodesList(id: let id, season: let season):
-            return TraktAPI.URLs.baseURL + "shows/\(id)/seasons/\(season)/episodes"
+        case .episodeDetail(request: let request):
+            return TraktAPI.URLs.baseURL + "shows/\(request.slug)/seasons/\(request.seasonNumber)/episodes/\(request.episodeNumber)"
+        case .episodesList(request: let request):
+            return TraktAPI.URLs.baseURL + "shows/\(request.slug)/seasons/\(request.seasonNumber)/episodes"
         }
     }
 }
 
-struct EpisodeService {
+struct EpisodeService: EpisodeApiClient {
     
-    static func getEpisodeList(fromShow show: Show, season: Season, callback: @escaping (Response<[Episode]>) -> ()) {
-        guard let slug = show.ids?.slug, let season = season.number else {
-            callback(Response<[Episode]>(data: [], result: .error(message: "Invalid request")))
-            return
-        }
-        
-        guard let url = URL(string: Endpoint.episodesList(id: slug, season: season).url) else {
+    static func getEpisodeList(request: EpisodeListRequest, callback: @escaping (Response<[Episode]>) -> ()) {
+        guard let url = URL(string: Endpoint.episodesList(request: request).url) else {
             callback(Response<[Episode]>(data: [], result: .error(message: "Invalid URL")))
             return
         }
@@ -53,13 +47,8 @@ struct EpisodeService {
         }
     }
     
-    static func getEpisodeDetail(fromShow show: Show, episode: Episode, callback: @escaping (Response<Episode>) -> ()) {
-        guard let slug = show.ids?.slug, let season = episode.season, let episode = episode.number else {
-            callback(Response<Episode>(data: nil, result: .error(message: "Invalid request")))
-            return
-        }
-        
-        guard let url = URL(string: Endpoint.episodeDetail(id: slug, season: season, episode: episode).url) else {
+    static func getEpisodeDetail(request: EpisodeDetailRequest, callback: @escaping (Response<Episode>) -> ()) {
+        guard let url = URL(string: Endpoint.episodeDetail(request: request).url) else {
             callback(Response<Episode>(data: nil, result: .error(message: "Invalid URL")))
             return
         }

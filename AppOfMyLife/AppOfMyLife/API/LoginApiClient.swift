@@ -9,5 +9,6 @@
 import Foundation
 
 protocol LoginApiClient {
-    static func getToken(code: String, callback: @escaping (Response<Auth>) -> ())
+    //http://docs.trakt.apiary.io/#reference/authentication-oauth/get-token/exchange-code-for-access_token
+    static func getToken(request: LoginRequest, callback: @escaping (Response<Auth>) -> ())
 }

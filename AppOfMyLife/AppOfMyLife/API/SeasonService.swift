@@ -9,21 +9,20 @@
 import Foundation
 
 private enum Endpoint {
-    // http://docs.trakt.apiary.io/#reference/seasons/summary/get-all-seasons-for-a-show
-    case seasonsList(id: String)
+    case seasonsList(request: SeasonListRequest)
     
     var url: String {
         switch self {
-        case .seasonsList(id: let id):
-            return TraktAPI.URLs.baseURL + "shows/\(id)/seasons"
+        case .seasonsList(request: let request):
+            return TraktAPI.URLs.baseURL + "shows/\(request.slug)/seasons"
         }
     }
 }
 
-struct SeasonService {
+struct SeasonService: SeasonApiClient {
     
-    static func getSeasonsList(fromShow show: Show, callback: @escaping (Response<[Season]>) -> ()) {
-        guard let slug = show.ids?.slug, let url = URL(string: Endpoint.seasonsList(id: slug).url) else {
+    static func getSeasonsList(request: SeasonListRequest, callback: @escaping (Response<[Season]>) -> ()) {
+        guard let url = URL(string: Endpoint.seasonsList(request: request).url) else {
             callback(Response<[Season]>(data: [], result: Result.error(message: "Invalid URL")))
             return
         }

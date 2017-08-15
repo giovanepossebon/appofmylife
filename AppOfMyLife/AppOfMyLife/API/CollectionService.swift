@@ -9,7 +9,7 @@
 import Foundation
 
 private struct Endpoint {
-    static let showCollection = "sync/collection/shows"   // http://docs.trakt.apiary.io/#reference/sync/get-collection/get-collection
+    static let showCollection = "sync/collection/shows"
 }
 
 struct CollectionService: CollectionApiClient {

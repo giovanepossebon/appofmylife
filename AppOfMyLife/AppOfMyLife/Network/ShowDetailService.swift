@@ -10,34 +10,26 @@ import Foundation
 import Alamofire
 
 private enum Endpoint {
-    // http://docs.trakt.apiary.io/#reference/shows/collection-progress/get-show-watched-progress
-    case showProgress(showId: String)
-    // http://docs.trakt.apiary.io/#reference/shows/summary/get-a-single-show
-    case showDetail(showId: String)
-    // http://docs.trakt.apiary.io/#reference/shows/next-episode/get-next-episode
-    case nextEpisode(showId: String)
+    case showProgress(request: ShowDetailRequest)
+    case showDetail(request: ShowDetailRequest)
+    case nextEpisode(request: ShowDetailRequest)
     
     var url: String {
         switch self {
-        case .showProgress(showId: let id):
-            return TraktAPI.URLs.baseURL + "shows/\(id)/progress/watched"
-        case .showDetail(showId: let id):
-            return TraktAPI.URLs.baseURL + "shows/\(id)"
-        case .nextEpisode(showId: let id):
-            return TraktAPI.URLs.baseURL + "shows/\(id)/next_episode"
+        case .showProgress(request: let request):
+            return TraktAPI.URLs.baseURL + "shows/\(request.showId)/progress/watched"
+        case .showDetail(request: let request):
+            return TraktAPI.URLs.baseURL + "shows/\(request.showId)"
+        case .nextEpisode(request: let request):
+            return TraktAPI.URLs.baseURL + "shows/\(request.showId)/next_episode"
         }
     }
 }
 
-struct ShowDetailService {
+struct ShowDetailService: ShowDetailApiClient {
 
-    static func getShowDetail(forShow show: Show, callback: @escaping (Response<Show>) -> ()) {
-        guard let slug = show.ids?.slug else {
-            callback(Response<Show>(data: nil, result: .error(message: "Slug not found")))
-            return
-        }
-        
-        guard let url = URL(string: Endpoint.showDetail(showId: slug).url) else {
+    static func getShowDetail(request: ShowDetailRequest, callback: @escaping (Response<Show>) -> ()) {
+        guard let url = URL(string: Endpoint.showDetail(request: request).url) else {
             callback(Response<Show>(data: nil, result: .error(message: "Invalid URL")))
             return
         }
@@ -61,14 +53,9 @@ struct ShowDetailService {
         }
     }
     
-    static func getShowProgress(forShow show: Show, callback: @escaping (Response<Progress>) -> ()) {
-        guard let slug = show.ids?.slug else {
-            callback(Response<Progress>(data: nil, result: .error(message: "Slug not found")))
-            return
-        }
-        
-        guard let url = URL(string: Endpoint.showProgress(showId: slug).url) else {
-            callback(Response<Progress>(data: nil, result: .error(message: "Invalid URL")))
+    static func getShowProgress(request: ShowDetailRequest, callback: @escaping (Response<ShowProgress>) -> ()) {
+        guard let url = URL(string: Endpoint.showProgress(request: request).url) else {
+            callback(Response<ShowProgress>(data: nil, result: .error(message: "Invalid URL")))
             return
         }
         
@@ -76,24 +63,19 @@ struct ShowDetailService {
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [String: Any] else {
-                    callback(Response<Progress>(data: nil, result: .error(message: "Serialization error")))
+                    callback(Response<ShowProgress>(data: nil, result: .error(message: "Serialization error")))
                     return
                 }
                 
-                callback(Response<Progress>(data: Progress(JSON: data), result: .success))
+                callback(Response<ShowProgress>(data: ShowProgress(JSON: data), result: .success))
             case .failure(let error):
-                callback(Response<Progress>(data: nil, result: .error(message: error.localizedDescription)))
+                callback(Response<ShowProgress>(data: nil, result: .error(message: error.localizedDescription)))
             }
         }
     }
     
-    static func getNextEpisode(forShow show: Show, callback: @escaping (Response<Episode>) -> ()) {
-        guard let slug = show.ids?.slug else {
-            callback(Response<Episode>(data: nil, result: .error(message: "Slug not found")))
-            return
-        }
-        
-        guard let url = URL(string: Endpoint.nextEpisode(showId: slug).url) else {
+    static func getNextEpisode(request: ShowDetailRequest, callback: @escaping (Response<Episode>) -> ()) {
+        guard let url = URL(string: Endpoint.nextEpisode(request: request).url) else {
             callback(Response<Episode>(data: nil, result: .error(message: "Invalid URL")))
             return
         }
