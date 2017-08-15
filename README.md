@@ -1,6 +1,10 @@
 # AppOfMyLife
   
-  This was an app created based on the trakt.tv API data
+  This was an app created based on the trakt.tv API data.
+  
+## Instructions
+
+  You need an account on https://trakt.tv/ to login in this app. After creating an account, you just have to login with your account and you will have access to your shows collection, profile, list of series, etc.
 
 ## Screenshots
 
@@ -8,7 +12,6 @@
 
 ## Specifications
 
-- Swift 3
 - iOS 10.3+
 - Xcode 8.3
 
@@ -22,5 +25,5 @@
 - [x] Mark episode as watched
 - [x] Profile
 - [x] Search
-- [ ] Add TV show to Watchlist
+- [x] Add TV show to Watchlist
 - [ ] Offline data
