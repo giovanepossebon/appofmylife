@@ -1,4 +1,4 @@
-### AppOfMyLife
+# AppOfMyLife
 
 This was an app created based on the trakt.tv API data
 
