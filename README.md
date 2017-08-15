@@ -5,6 +5,10 @@
 ## Instructions
 
   You need an account on https://trakt.tv/ to login in this app. After creating an account, you just have to login with your account and you will have access to your shows collection, profile, list of series, etc.
+  
+## Running the unit tests
+
+  You'll be able to run the unit tests selecting the `AppOfMyLifeTests` scheme on the xCode, and then just press `cmd + U` to run all the tests.
 
 ## Screenshots
 
