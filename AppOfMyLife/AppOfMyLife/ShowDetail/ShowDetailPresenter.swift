@@ -13,6 +13,7 @@ protocol ShowDetailViewPresenter {
     func loadShowDetail(fromShow show: Show)
     func loadShowProgress(fromShow show: Show)
     func loadNextEpisode(fromShow show: Show)
+    func addShowToWatchlist(_ show: Show)
 }
 
 class ShowDetailPresenter: ShowDetailViewPresenter {
@@ -65,11 +66,34 @@ class ShowDetailPresenter: ShowDetailViewPresenter {
             switch response.result {
             case .success:
                 guard let nextEpisode = response.data else {
-                    self.view.onError(error: "Failed to load show detail")
+                    self.view.onError(error: "Failed to load next episode")
                     return
                 }
                 
                 self.view.onNextEpisodeLoaded(nextEpisode: nextEpisode)
+            case .error(message: let error):
+                debugPrint(error)
+            }
+        }
+    }
+    
+    func addShowToWatchlist(_ show: Show) {
+        WatchlistService.syncWatchlist(withShow: show) { response in
+            switch response.result {
+            case .success:
+                guard let sync = response.data else {
+                    self.view.onError(error: "Invalid Data")
+                    return
+                }
+                
+                if let added = sync.added, added.shows > 0 {
+                    self.view.onShowAddedToWatchlist(feedback: "Added to watchlist")
+                } else if let existing = sync.existing, existing.shows > 0 {
+                    self.view.onShowAddedToWatchlist(feedback: "Already in watchlist")
+                } else {
+                    self.view.onError(error: "An error occurred")
+                }
+                
             case .error(message: let error):
                 self.view.onError(error: error)
             }

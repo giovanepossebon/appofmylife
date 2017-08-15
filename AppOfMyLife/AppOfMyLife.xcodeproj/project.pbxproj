@@ -83,6 +83,9 @@
 		9F433AC71F40F0AF00A5E562 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433AC61F40F0AF00A5E562 /* History.swift */; };
 		9F433AC91F40F3C400A5E562 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F433AC81F40F3C400A5E562 /* ButtonCell.swift */; };
 		9F433ACB1F40F3D200A5E562 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F433ACA1F40F3D200A5E562 /* ButtonCell.xib */; };
+		9F536A9F1F43AC0D0016F44B /* WatchlistApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F536A9E1F43AC0D0016F44B /* WatchlistApiClient.swift */; };
+		9F536AA11F43AC7F0016F44B /* WatchlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F536AA01F43AC7F0016F44B /* WatchlistService.swift */; };
+		9F536AA31F43AF800016F44B /* WatchlistSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F536AA21F43AF800016F44B /* WatchlistSync.swift */; };
 		9F5C9E251F411A5A0071B6C6 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5C9E231F411A5A0071B6C6 /* Profile.storyboard */; };
 		9F5C9E281F411B490071B6C6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5C9E271F411B490071B6C6 /* ProfileViewController.swift */; };
 		9F5C9E2A1F411B8F0071B6C6 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5C9E291F411B8F0071B6C6 /* ProfilePresenter.swift */; };
@@ -237,6 +240,9 @@
 		9F433AC61F40F0AF00A5E562 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = History.swift; path = Model/History.swift; sourceTree = "<group>"; };
 		9F433AC81F40F3C400A5E562 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonCell.swift; path = CustomCells/ButtonCell.swift; sourceTree = "<group>"; };
 		9F433ACA1F40F3D200A5E562 /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonCell.xib; path = CustomCells/ButtonCell.xib; sourceTree = "<group>"; };
+		9F536A9E1F43AC0D0016F44B /* WatchlistApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchlistApiClient.swift; path = API/WatchlistApiClient.swift; sourceTree = "<group>"; };
+		9F536AA01F43AC7F0016F44B /* WatchlistService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchlistService.swift; path = API/WatchlistService.swift; sourceTree = "<group>"; };
+		9F536AA21F43AF800016F44B /* WatchlistSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchlistSync.swift; path = Model/WatchlistSync.swift; sourceTree = "<group>"; };
 		9F5C9E241F411A5A0071B6C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		9F5C9E271F411B490071B6C6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Profile/ProfileViewController.swift; sourceTree = "<group>"; };
 		9F5C9E291F411B8F0071B6C6 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Profile/ProfilePresenter.swift; sourceTree = "<group>"; };
@@ -355,6 +361,7 @@
 				9F433AC61F40F0AF00A5E562 /* History.swift */,
 				9F98A60F1F412BB300035FBA /* Stats.swift */,
 				9F27E0FB1F42B27800C96444 /* SearchResult.swift */,
+				9F536AA21F43AF800016F44B /* WatchlistSync.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -383,6 +390,7 @@
 				9F5C9E2B1F411CDA0071B6C6 /* UserService.swift */,
 				9F98A6111F412D7000035FBA /* StatsService.swift */,
 				9F27E0F91F42ADA700C96444 /* SearchService.swift */,
+				9F536AA01F43AC7F0016F44B /* WatchlistService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -549,6 +557,7 @@
 				9F27E0D01F42966B00C96444 /* UserApiClient.swift */,
 				9F27E0D41F42976200C96444 /* StatsApiClient.swift */,
 				9F27E0F71F42AD0A00C96444 /* SearchApiClient.swift */,
+				9F536A9E1F43AC0D0016F44B /* WatchlistApiClient.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -1008,6 +1017,8 @@
 				9F7763F81F3E985500E9E885 /* TitleHeaderSection.swift in Sources */,
 				9F27E0FA1F42ADA700C96444 /* SearchService.swift in Sources */,
 				9F43313B1F3AC59100BA4331 /* LoginPresenter.swift in Sources */,
+				9F536AA11F43AC7F0016F44B /* WatchlistService.swift in Sources */,
+				9F536A9F1F43AC0D0016F44B /* WatchlistApiClient.swift in Sources */,
 				9F27E0E21F429A1A00C96444 /* HistoryRequest.swift in Sources */,
 				9F27E0B91F4283AC00C96444 /* EpisodeApiClient.swift in Sources */,
 				9F7764221F3F3C1D00E9E885 /* ProgressCell.swift in Sources */,
@@ -1075,6 +1086,7 @@
 				9F433AB81F40C4A600A5E562 /* SeasonService.swift in Sources */,
 				9F433AAF1F3F60E100A5E562 /* EpisodeDetailPresenter.swift in Sources */,
 				9F27E0D51F42976200C96444 /* StatsApiClient.swift in Sources */,
+				9F536AA31F43AF800016F44B /* WatchlistSync.swift in Sources */,
 				9F433ABB1F40D85300A5E562 /* EpisodesListViewController.swift in Sources */,
 				9F27E0921F41597C00C96444 /* UIViewController+Extension.swift in Sources */,
 				9F5C9E281F411B490071B6C6 /* ProfileViewController.swift in Sources */,
