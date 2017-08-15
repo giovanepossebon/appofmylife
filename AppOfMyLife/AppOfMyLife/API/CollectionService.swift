@@ -9,16 +9,16 @@
 import Foundation
 
 private struct Endpoint {
-    static let showCollection = "/sync/collection/shows"   // http://docs.trakt.apiary.io/#reference/sync/get-collection/get-collection
+    static let showCollection = "sync/collection/shows"   // http://docs.trakt.apiary.io/#reference/sync/get-collection/get-collection
 }
 
-struct CollectionService {
+struct CollectionService: CollectionApiClient {
     
     static let BASE_URL = TraktAPI.URLs.baseURL
     
-    static func getShowCollection(callback: @escaping (Response<[Collection]>) -> ()) {
+    static func getShowCollection(callback: @escaping (Response<[ShowCollection]>) -> ()) {
         guard let url = URL(string: "\(BASE_URL + Endpoint.showCollection)") else {
-            callback(Response<[Collection]>(data: [], result: .error(message: "Invalid URL")))
+            callback(Response<[ShowCollection]>(data: [], result: .error(message: "Invalid URL")))
             return
         }
         
@@ -26,14 +26,14 @@ struct CollectionService {
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [[String:Any]] else {
-                    callback(Response<[Collection]>(data: [], result: .error(message: "Invalid Serialization")))
+                    callback(Response<[ShowCollection]>(data: [], result: .error(message: "Invalid Serialization")))
                     return
                 }
                 
-                let shows = data.flatMap { Collection(JSON: $0) }
-                callback(Response<[Collection]>(data: shows, result: .success))
+                let shows = data.flatMap { ShowCollection(JSON: $0) }
+                callback(Response<[ShowCollection]>(data: shows, result: .success))
             case .failure(let error):
-                callback(Response<[Collection]>(data: [], result: .error(message: error.localizedDescription)))
+                callback(Response<[ShowCollection]>(data: [], result: .error(message: error.localizedDescription)))
             }
         }
         

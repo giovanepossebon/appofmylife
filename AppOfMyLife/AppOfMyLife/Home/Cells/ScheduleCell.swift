@@ -30,7 +30,8 @@ class ScheduleCell: UITableViewCell {
         labelTitle.text = schedule.episode?.title
         labelSubtitle.text = schedule.show?.title
         
-        if let timestamp = schedule.firstAired, let time = Date.dateFromISOString(string: timestamp) {
+        if let timestamp = schedule.firstAired {
+            let time = Date.dateFromISOString(string: timestamp)
             labelDate.text = time.ISOStringFromDate(withDateFormat: .dayAndMonth)
             labelHour.text = time.ISOStringFromDate(withDateFormat: .hour)
         }

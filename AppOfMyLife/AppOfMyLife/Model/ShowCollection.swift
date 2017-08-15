@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct Collection: Mappable {
+struct ShowCollection: Mappable {
     
     var lastCollectedAt: String?
     var show: Show?

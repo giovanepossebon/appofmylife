@@ -9,14 +9,14 @@
 import UIKit
 
 protocol CollectionView: class {
-    func onCollectionLoaded(collections: [Collection])
+    func onCollectionLoaded(collections: [ShowCollection])
     func onLoadFailed(error: String)
 }
 
 class CollectionViewController: UICollectionViewController {
     
     var presenter: CollectionViewPresenter?
-    var collections: [Collection]? {
+    var collections: [ShowCollection]? {
         didSet {
             collectionView?.reloadData()
         }
@@ -38,7 +38,7 @@ class CollectionViewController: UICollectionViewController {
 
 extension CollectionViewController: CollectionView {
     
-    func onCollectionLoaded(collections: [Collection]) {
+    func onCollectionLoaded(collections: [ShowCollection]) {
         self.collections = collections
     }
     

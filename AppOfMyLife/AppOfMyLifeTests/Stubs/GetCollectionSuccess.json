@@ -1,0 +1,130 @@
+[
+  {
+    "last_collected_at": "2017-08-12T02:28:30.000Z",
+    "show": {
+      "title": "Rick and Morty",
+      "year": 2013,
+      "ids": {
+        "trakt": 69829,
+        "slug": "rick-and-morty",
+        "tvdb": 275274,
+        "imdb": "tt2861424",
+        "tmdb": 60625,
+        "tvrage": 33381
+      }
+    },
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 2,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 3,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 4,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 5,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 6,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 7,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 8,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 9,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 10,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 11,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "episodes": [
+          {
+            "number": 1,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 2,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 3,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 4,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 5,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 6,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 7,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 8,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 9,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 10,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "episodes": [
+          {
+            "number": 1,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 2,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          },
+          {
+            "number": 3,
+            "collected_at": "2017-08-12T02:28:30.000Z"
+          }
+        ]
+      }
+    ]
+  }
+]
