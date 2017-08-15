@@ -10,7 +10,6 @@ import Foundation
 import Alamofire
 
 private enum Endpoint {
-    // http://docs.trakt.apiary.io/#reference/users/settings/retrieve-settings
     case userSettings
     
     var url: String {
@@ -21,7 +20,7 @@ private enum Endpoint {
     }
 }
 
-struct UserService {
+struct UserService: UserApiClient {
     
     static func getUserSettings(callback: @escaping (Response<UserSettings>) -> ()) {
         guard let url = URL(string: Endpoint.userSettings.url) else {

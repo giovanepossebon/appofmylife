@@ -6,8 +6,6 @@
 //  Copyright © 2017 giovane. All rights reserved.
 //
 
-import Foundation
-
 import Quick
 import Nimble
 import Mockingjay

@@ -9,5 +9,6 @@
 import Foundation
 
 protocol CollectionApiClient {
+    // http://docs.trakt.apiary.io/#reference/sync/get-collection/get-collection
     static func getShowCollection(callback: @escaping (Response<[ShowCollection]>) -> ())
 }

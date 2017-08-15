@@ -1,0 +1,26 @@
+[
+  {
+    "season": 0,
+    "number": 1,
+    "title": "First Look: Behind the Scenes",
+    "ids": {
+      "trakt": 36440,
+      "tvdb": 3254641,
+      "imdb": "tt1480055",
+      "tmdb": 63056,
+      "tvrage": null
+    }
+  },
+  {
+    "season": 0,
+    "number": 2,
+    "title": "Athelstan's Journal",
+    "ids": {
+      "trakt": 36440,
+      "tvdb": 3254641,
+      "imdb": "tt1480055",
+      "tmdb": 63056,
+      "tvrage": null
+    }
+  }
+]

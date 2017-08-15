@@ -26,7 +26,7 @@ class HomePresenter: HomeViewPresenter {
         HomeService.getMySchedule(request: request) { response in
             switch response.result{
             case .success:
-                guard let schedule = response.data else {
+                guard let schedule = response.data?.filter({ Date.dateFromISOString(string: $0.firstAired ?? "") > Date() }) else {
                     self.view.onLoadFailed(error: "Invalid data")
                     return
                 }

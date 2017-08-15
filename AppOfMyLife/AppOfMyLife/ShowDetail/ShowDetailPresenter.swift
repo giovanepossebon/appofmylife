@@ -23,7 +23,9 @@ class ShowDetailPresenter: ShowDetailViewPresenter {
     }
     
     func loadShowDetail(fromShow show: Show) {
-        ShowDetailService.getShowDetail(forShow: show) { response in
+        let request = ShowDetailRequest(showId: show.ids?.slug ?? "")
+        
+        ShowDetailService.getShowDetail(request: request) { response in
             switch response.result {
             case .success:
                 guard let showDetail = response.data else {
@@ -39,7 +41,9 @@ class ShowDetailPresenter: ShowDetailViewPresenter {
     }
     
     func loadShowProgress(fromShow show: Show) {
-        ShowDetailService.getShowProgress(forShow: show) { response in
+        let request = ShowDetailRequest(showId: show.ids?.slug ?? "")
+        
+        ShowDetailService.getShowProgress(request: request) { response in
             switch response.result {
             case .success:
                 guard let progress = response.data else {
@@ -55,7 +59,9 @@ class ShowDetailPresenter: ShowDetailViewPresenter {
     }
     
     func loadNextEpisode(fromShow show: Show) {
-        ShowDetailService.getNextEpisode(forShow: show) { response in
+        let request = ShowDetailRequest(showId: show.ids?.slug ?? "")
+        
+        ShowDetailService.getNextEpisode(request: request) { response in
             switch response.result {
             case .success:
                 guard let nextEpisode = response.data else {

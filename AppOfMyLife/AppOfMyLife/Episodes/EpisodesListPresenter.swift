@@ -21,7 +21,10 @@ class EpisodesListPresenter: EpisodesListViewPresenter {
     }
     
     func loadEpisodeList(fromShow show: Show, season: Season) {
-        EpisodeService.getEpisodeList(fromShow: show, season: season) { response in
+        let request = EpisodeListRequest(slug: show.ids?.slug ?? "",
+                                         seasonNumber: season.number ?? 0)
+        
+        EpisodeService.getEpisodeList(request: request) { response in
             switch response.result {
             case .success:
                 guard let episodes = response.data else {

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 3021914054,
+    "watched_at": "2017-08-09T02:50:06.000Z",
+    "action": "watch",
+    "type": "episode",
+    "episode": {
+      "season": 1,
+      "number": 1,
+      "title": "Winter Is Coming",
+      "ids": {
+        "trakt": 73640,
+        "tvdb": 3254641,
+        "imdb": "tt1480055",
+        "tmdb": 63056,
+        "tvrage": 1065008299
+      }
+    },
+    "show": {
+      "title": "Game of Thrones",
+      "year": 2011,
+      "ids": {
+        "trakt": 1390,
+        "slug": "game-of-thrones",
+        "tvdb": 121361,
+        "imdb": "tt0944947",
+        "tmdb": 1399,
+        "tvrage": 24493
+      }
+    }
+  }
+]

@@ -21,7 +21,9 @@ class SeasonsListPresenter: SeasonsListViewPresenter {
     }
     
     func loadSeasonList(fromShow show: Show) {
-        SeasonService.getSeasonsList(fromShow: show) { response in
+        let request = SeasonListRequest(slug: show.ids?.slug ?? "")
+        
+        SeasonService.getSeasonsList(request: request) { response in
             switch response.result {
             case .success:
                 guard let seasons = response.data else {

@@ -1,5 +1,5 @@
 //
-//  Progress.swift
+//  ShowProgress.swift
 //  AppOfMyLife
 //
 //  Created by Giovane Possebon on 12/8/17.
@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-struct Progress: Mappable {
+struct ShowProgress: Mappable {
     
     var aired: Int?
     var completed: Int?

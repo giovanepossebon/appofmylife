@@ -40,7 +40,13 @@ class LoginPresenter: LoginViewPresenter {
     }
     
     private func loginWithCode(code: String) {
-        LoginService.getToken(code: code, callback: { response in
+        let request = LoginRequest(code: code,
+                                   clientId: TraktAPI.clientId,
+                                   clientSecret: TraktAPI.clientSecret,
+                                   redirectUri: TraktAPI.redirectUri,
+                                   grantType: TraktAPI.grantType)
+        
+        LoginService.getToken(request: request, callback: { response in
             switch response.result {
             case .success:
                 guard let auth = response.data, let token = auth.accessToken else {

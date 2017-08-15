@@ -18,6 +18,7 @@ struct Stats: Mappable {
     mutating func mapping(map: Map) {
         show        <- map["shows"]
         episode     <- map["episodes"]
+        network     <- map["network"]
     }
 }
 

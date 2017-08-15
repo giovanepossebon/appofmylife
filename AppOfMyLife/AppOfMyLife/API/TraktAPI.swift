@@ -13,6 +13,7 @@ struct TraktAPI {
     static let clientSecret = "6823613d6ccdb93a6f468a7c2b7d8d8bb24818bd1d8f6810f28b393396f42634"
     static let redirectUri = "com.giovane.appofmylife://auth"
     static let responseType = "code"
+    static let grantType = "authorization_code"
     
     struct URLs {
         static let loginURL: URL? = URL(string: String(format: "https://trakt.tv/oauth/authorize?response_type=%@&client_id=%@&redirect_uri=%@", responseType, clientId, redirectUri))

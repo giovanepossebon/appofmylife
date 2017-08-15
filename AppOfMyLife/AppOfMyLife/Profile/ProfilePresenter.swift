@@ -38,7 +38,9 @@ class ProfilePresenter: ProfileViewPresenter {
     }
     
     func loadStats(fromUser user: User) {
-        StatsService.getStats(fromUser: user) { response in
+        let request = StatsRequest(slug: user.ids?.slug ?? "")
+        
+        StatsService.getStats(request: request) { response in
             switch response.result {
             case .success:
                 guard let stats = response.data else {
