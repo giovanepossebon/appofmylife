@@ -9,6 +9,6 @@
 - [x] Episode informations
 - [x] Mark episode as watched
 - [x] Profile
-- [ ] Search
+- [x] Search
 - [ ] Add TV show to Watchlist
 - [ ] Offline watchlist
