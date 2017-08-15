@@ -2,7 +2,7 @@
   
   This was an app created based on the trakt.tv API data
 
-## Screenshot
+## Screenshots
 
 ![1](https://github.com/giovanepossebon/appofmylife/blob/master/AppOfMyLife/ScreenShots/1.png) ![4](https://github.com/giovanepossebon/appofmylife/blob/master/AppOfMyLife/ScreenShots/4.png) ![6](https://github.com/giovanepossebon/appofmylife/blob/master/AppOfMyLife/ScreenShots/6.png) ![3](https://github.com/giovanepossebon/appofmylife/blob/master/AppOfMyLife/ScreenShots/3.png)
 
@@ -10,6 +10,7 @@
 
 - Swift 3
 - iOS 10.3+
+- Xcode 8.3
 
 ### Implemented Features:
 
