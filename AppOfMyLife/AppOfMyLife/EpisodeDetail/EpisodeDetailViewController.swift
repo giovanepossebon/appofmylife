@@ -94,7 +94,6 @@ extension EpisodeDetailViewController: EpisodeDetailView {
     }
 
     func onHistorySynced() {
-        print("message")
         presenter?.loadHistory(fromEpisode: episode)
     }
     

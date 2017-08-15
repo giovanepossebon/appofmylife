@@ -23,7 +23,7 @@ struct StatsService: StatsApiClient {
     
     static func getStats(request: StatsRequest, callback: @escaping (Response<Stats>) -> ()) {
         guard let url = URL(string: Endpoint.userStats(request: request).url) else {
-            callback(Response<Stats>(data: nil, result: .error(message: "Invalid Url")))
+            callback(Response<Stats>(data: nil, result: .error(message: "Invalid URL")))
             return
         }
         

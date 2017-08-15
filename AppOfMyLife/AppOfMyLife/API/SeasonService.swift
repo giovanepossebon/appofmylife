@@ -31,7 +31,7 @@ struct SeasonService: SeasonApiClient {
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [[String: Any]] else {
-                    callback(Response<[Season]>(data: [], result: Result.error(message: "Serialization Error")))
+                    callback(Response<[Season]>(data: [], result: Result.error(message: "Invalid Serialization")))
                     return
                 }
                 

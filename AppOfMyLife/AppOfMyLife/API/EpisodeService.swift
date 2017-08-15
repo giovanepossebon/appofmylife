@@ -35,7 +35,7 @@ struct EpisodeService: EpisodeApiClient {
             switch response.result {
             case .success:
                 guard let data = response.result.value as? [[String: Any]] else {
-                    callback(Response<[Episode]>(data: [], result: .error(message: "Serialization failed")))
+                    callback(Response<[Episode]>(data: [], result: .error(message: "Invalid Serialization")))
                     return
                 }
                 

@@ -50,11 +50,4 @@ class CollectionItemCell: UICollectionViewCell {
         }
     }
     
-    func populate(withCollection collection: ShowCollection) {
-        episodeName.text = collection.show?.title
-        if let tvdbId = collection.show?.ids?.tvdb, let url = URL(string: ShowBannerStyle.portrait(id: tvdbId, variation: 1).url) {
-            imageThumb.af_setImage(withURL: url)
-        }
-    }
-    
 }

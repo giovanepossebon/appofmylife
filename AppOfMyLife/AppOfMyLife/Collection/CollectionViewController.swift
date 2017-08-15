@@ -58,11 +58,11 @@ extension CollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionItemCell.identifier, for: indexPath) as? CollectionItemCell {
-            guard let collection = collections?[indexPath.row] else {
+            guard let show = collections?[indexPath.row].show else {
                 return UICollectionViewCell()
             }
             
-            cell.populate(withCollection: collection)
+            cell.populate(withShow: show)
             
             return cell
         }
