@@ -49,7 +49,6 @@ class EpisodeDetailPresenter: EpisodeDetailViewPresenter {
             switch response.result {
             case .success:
                 guard let episodeHistory = response.data?.first else {
-                    self.view.onLoadError(error: "Invalid data")
                     return
                 }
                 

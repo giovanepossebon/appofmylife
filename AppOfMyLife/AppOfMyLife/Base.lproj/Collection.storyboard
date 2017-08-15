@@ -49,13 +49,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KAI-89-Eyd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="flP-yn-xR3" id="G0b-Sm-SyK"/>
                                     <outlet property="delegate" destination="flP-yn-xR3" id="i8z-d9-3P1"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="KAI-89-Eyd" firstAttribute="leading" secondItem="rSB-7e-QKS" secondAttribute="leading" id="VjS-EA-DQP"/>
                             <constraint firstItem="c1f-2U-IA4" firstAttribute="top" secondItem="KAI-89-Eyd" secondAttribute="bottom" id="Ykv-hl-ArH"/>
