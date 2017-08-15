@@ -59,7 +59,7 @@ extension EpisodesListViewController: EpisodeListView {
     }
     
     func onLoadError(error: String) {
-        print(error)
+        showHUD(withMessage: error)
     }
     
 }

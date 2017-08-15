@@ -43,7 +43,7 @@ extension CollectionViewController: CollectionView {
     }
     
     func onLoadFailed(error: String) {
-        print(error)
+        showHUD(withMessage: error)
     }
     
 }

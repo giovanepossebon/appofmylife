@@ -104,7 +104,7 @@ extension ShowDetailViewController: ShowDetailView {
     }
     
     func onError(error: String) {
-        print(error)
+        showHUD(withMessage: error)
     }
 }
 

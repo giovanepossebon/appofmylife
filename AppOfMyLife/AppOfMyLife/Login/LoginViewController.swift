@@ -63,7 +63,7 @@ extension LoginViewController: LoginView {
     }
     
     func errorOnLogin(error: String) {
-        print(error)
+        showHUD(withMessage: error)
     }
 
 }
