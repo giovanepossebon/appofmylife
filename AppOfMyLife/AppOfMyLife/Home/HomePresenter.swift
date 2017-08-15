@@ -21,7 +21,9 @@ class HomePresenter: HomeViewPresenter {
     }
     
     func loadSchedule() {
-        HomeService.getMySchedule { response in
+        let request = HomeServiceRequest(startDate: Date().ISOStringFromDate(withDateFormat: .traktAPI), days: 14)
+        
+        HomeService.getMySchedule(request: request) { response in
             switch response.result{
             case .success:
                 guard let schedule = response.data else {

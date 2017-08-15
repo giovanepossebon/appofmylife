@@ -19,7 +19,8 @@ class EpisodeDateCell: UITableViewCell {
     @IBOutlet weak var labelRuntime: UILabel!
     
     func populate(withEpisode episode: Episode) {
-        if let timestamp = episode.firstAired, let time = Date.dateFromISOString(string: timestamp) {
+        if let timestamp = episode.firstAired {
+            let time = Date.dateFromISOString(string: timestamp)
             labelDateAndMonth.text = time.ISOStringFromDate(withDateFormat: .dayMonthAndHour)
             labelYear.text = time.ISOStringFromDate(withDateFormat: .year)
             

@@ -30,7 +30,7 @@ class CollectionItemCell: UICollectionViewCell {
         layer.masksToBounds = false
     }
     
-    func populate(withCollection collection: Collection) {
+    func populate(withCollection collection: ShowCollection) {
         if let tvdbId = collection.show?.ids?.tvdb, let url = URL(string: ShowBannerStyle.portrait(id: tvdbId, variation: 1).url) {
             imageThumb.af_setImage(withURL: url)
         }
