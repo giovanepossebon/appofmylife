@@ -16,14 +16,16 @@ private enum DetailRows: Int {
     case nextEpisode
     case otherEpisodesHeader
     case seasons
+    case addToWatchlistButton
     
-    static let count = DetailRows.seasons.hashValue + 1
+    static let count = DetailRows.addToWatchlistButton.hashValue + 1
 }
 
 protocol ShowDetailView: class {
     func onShowDetailLoaded(showDetail: Show)
     func onShowProgressLoaded(showProgress: ShowProgress)
     func onNextEpisodeLoaded(nextEpisode: Episode)
+    func onShowAddedToWatchlist(feedback: String)
     func onError(error: String)
 }
 
@@ -80,6 +82,7 @@ class ShowDetailViewController: UIViewController {
         tableView.register(UINib(nibName: ProgressCell.nibName, bundle: nil), forCellReuseIdentifier: ProgressCell.identifier)
         tableView.register(UINib(nibName: TitleWithAccessoryCell.nibName, bundle: nil), forCellReuseIdentifier: TitleWithAccessoryCell.identifier)
         tableView.register(UINib(nibName: TitleHeaderSection.nibName, bundle: nil), forCellReuseIdentifier: TitleHeaderSection.identifier)
+        tableView.register(UINib(nibName: ButtonCell.nibName, bundle: nil), forCellReuseIdentifier: ButtonCell.identifier)
         tableView.separatorStyle = .none
     }
     
@@ -105,6 +108,10 @@ extension ShowDetailViewController: ShowDetailView {
     
     func onError(error: String) {
         showHUD(withMessage: error)
+    }
+    
+    func onShowAddedToWatchlist(feedback: String) {
+        showHUD(withMessage: feedback)
     }
 }
 
@@ -169,6 +176,15 @@ extension ShowDetailViewController: UITableViewDataSource {
                 
                 return cell
             }
+        case .addToWatchlistButton:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: ButtonCell.identifier, for: indexPath) as? ButtonCell {
+                
+                cell.delegate = self
+                cell.populate(withTitle: "Add to Watchlist", color: .purple)
+                
+                return cell
+            }
+
         }
         
         return UITableViewCell()
@@ -209,6 +225,8 @@ extension ShowDetailViewController: UITableViewDelegate {
             return TitleHeaderSection.height
         case .nextEpisode, .seasons:
             return TitleWithAccessoryCell.height
+        case .addToWatchlistButton:
+            return ButtonCell.height
         }
     }
     
@@ -226,6 +244,14 @@ extension ShowDetailViewController: UITableViewDelegate {
         if let seasonsListViewController = SeasonsListViewController.instance(withShow: show) {
             navigationController?.pushViewController(seasonsListViewController, animated: true)
         }
+    }
+    
+}
+
+extension ShowDetailViewController: ButtonCellDelegate {
+    
+    func onButtonTouched() {
+        presenter?.addShowToWatchlist(show)
     }
     
 }
