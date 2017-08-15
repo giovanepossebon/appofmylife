@@ -37,6 +37,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="ezU-8l-TJ3" secondAttribute="trailing" constant="7" id="1oa-Bd-jhU"/>
                     <constraint firstAttribute="trailingMargin" secondItem="bJc-g1-64l" secondAttribute="trailing" constant="7" id="45E-bH-dks"/>
@@ -49,7 +50,7 @@
                     <constraint firstItem="bJc-g1-64l" firstAttribute="top" secondItem="ezU-8l-TJ3" secondAttribute="bottom" constant="14" id="tAN-Lz-bV4"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
             <connections>
                 <outlet property="statusLabel" destination="ezU-8l-TJ3" id="4AB-1q-u5W"/>
                 <outlet property="statusProgressView" destination="bJc-g1-64l" id="O9S-9c-MNJ"/>
