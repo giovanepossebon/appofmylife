@@ -57,7 +57,7 @@ extension SeasonsListViewController: SeasonListView {
     }
     
     func onLoadError(error: String) {
-        print(error)
+        showHUD(withMessage: error)
     }
     
 }

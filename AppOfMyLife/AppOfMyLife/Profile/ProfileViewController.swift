@@ -102,7 +102,7 @@ extension ProfileViewController: ProfileView {
     }
     
     func onLoadError(error: String) {
-        print(error)
+        showHUD(withMessage: error)
     }
     
 }

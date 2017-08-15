@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 extension UIViewController {
     static var name: String {
@@ -15,6 +16,10 @@ extension UIViewController {
     
     static func create<T: UIViewController>(storyboardName: String) -> T? {
         return UIStoryboard.createViewController(storyboardName, vcName: T.name, vcClass: T.self)
+    }
+    
+    internal func showHUD(withMessage message: String) {
+        HUD.flash(.label(message), delay: 2.0)
     }
 }
 

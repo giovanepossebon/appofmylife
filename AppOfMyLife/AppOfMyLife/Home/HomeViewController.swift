@@ -49,7 +49,7 @@ extension HomeViewController: HomeView {
     }
     
     func onLoadFailed(error: String) {
-        print(error)
+        showHUD(withMessage: error)
     }
 }
 

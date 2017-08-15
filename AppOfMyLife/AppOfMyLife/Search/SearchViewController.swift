@@ -60,7 +60,7 @@ extension SearchViewController: SearchView {
     }
     
     func onSearchError(error: String) {
-        print(error)
+        showHUD(withMessage: error)
     }
     
 }

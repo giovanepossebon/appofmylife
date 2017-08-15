@@ -99,7 +99,7 @@ extension EpisodeDetailViewController: EpisodeDetailView {
     }
     
     func onLoadError(error: String) {
-        print(error)
+        showHUD(withMessage: error)
     }
     
 }
