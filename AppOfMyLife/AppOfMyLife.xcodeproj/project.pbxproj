@@ -58,6 +58,8 @@
 		9F27E0F81F42AD0A00C96444 /* SearchApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E0F71F42AD0A00C96444 /* SearchApiClient.swift */; };
 		9F27E0FA1F42ADA700C96444 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E0F91F42ADA700C96444 /* SearchService.swift */; };
 		9F27E0FC1F42B27800C96444 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E0FB1F42B27800C96444 /* SearchResult.swift */; };
+		9F27E1001F42BFEE00C96444 /* SearchApiClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E0FF1F42BFEE00C96444 /* SearchApiClientSpec.swift */; };
+		9F27E1021F42C07200C96444 /* GetSearchResultSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F27E1011F42C07200C96444 /* GetSearchResultSuccess.json */; };
 		9F3AEFF81F3A9B5C00EAE651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3AEFF71F3A9B5C00EAE651 /* AppDelegate.swift */; };
 		9F3AEFFD1F3A9B5C00EAE651 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3AEFFB1F3A9B5C00EAE651 /* Login.storyboard */; };
 		9F3AEFFF1F3A9B5C00EAE651 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3AEFFE1F3A9B5C00EAE651 /* Assets.xcassets */; };
@@ -204,6 +206,8 @@
 		9F27E0F71F42AD0A00C96444 /* SearchApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchApiClient.swift; path = API/SearchApiClient.swift; sourceTree = "<group>"; };
 		9F27E0F91F42ADA700C96444 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchService.swift; path = API/SearchService.swift; sourceTree = "<group>"; };
 		9F27E0FB1F42B27800C96444 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResult.swift; path = Model/SearchResult.swift; sourceTree = "<group>"; };
+		9F27E0FF1F42BFEE00C96444 /* SearchApiClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchApiClientSpec.swift; sourceTree = "<group>"; };
+		9F27E1011F42C07200C96444 /* GetSearchResultSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = GetSearchResultSuccess.json; path = Stubs/GetSearchResultSuccess.json; sourceTree = "<group>"; };
 		9F3AEFF41F3A9B5C00EAE651 /* AppOfMyLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppOfMyLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3AEFF71F3A9B5C00EAE651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F3AEFFC1F3A9B5C00EAE651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -392,6 +396,7 @@
 				9F27E0C61F42916D00C96444 /* GetHistorySuccess.json */,
 				9F27E0C41F428F5F00C96444 /* GetSeasonListSuccess.json */,
 				9F27E0BE1F428C0200C96444 /* GetEpisodeListSuccess.json */,
+				9F27E1011F42C07200C96444 /* GetSearchResultSuccess.json */,
 				9F27E0BC1F42874300C96444 /* GetEpisodeDetailSuccess.json */,
 				9F27E0B61F42818800C96444 /* GetNextEpisodeSuccess.json */,
 				9F27E0B41F427FAE00C96444 /* GetShowDetailSuccess.json */,
@@ -428,6 +433,7 @@
 				9F27E0CC1F42953D00C96444 /* UserSettingsApiClientSpec.swift */,
 				9F27E0D21F42973000C96444 /* StatsApiClientSpec.swift */,
 				9F27E0E51F42A23700C96444 /* LoginApiClientSpec.swift */,
+				9F27E0FF1F42BFEE00C96444 /* SearchApiClientSpec.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -842,6 +848,7 @@
 				9F27E0BD1F42874300C96444 /* GetEpisodeDetailSuccess.json in Resources */,
 				9F27E0D71F4297C100C96444 /* GetStatsSuccess.json in Resources */,
 				9F27E0C51F428F5F00C96444 /* GetSeasonListSuccess.json in Resources */,
+				9F27E1021F42C07200C96444 /* GetSearchResultSuccess.json in Resources */,
 				9F27E0C71F42916D00C96444 /* GetHistorySuccess.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1086,6 +1093,7 @@
 				9F27E0B11F427B5100C96444 /* ShowDetailApiClientSpec.swift in Sources */,
 				9F27E0CB1F4292C700C96444 /* HistoryApiClientSpec.swift in Sources */,
 				9F27E0BB1F4286D300C96444 /* EpisodeApiClientSpec.swift in Sources */,
+				9F27E1001F42BFEE00C96444 /* SearchApiClientSpec.swift in Sources */,
 				9F7763F61F3E922300E9E885 /* DateExtensionTest.swift in Sources */,
 				9F27E0D31F42973000C96444 /* StatsApiClientSpec.swift in Sources */,
 				9F27E09C1F41636B00C96444 /* HomeApiClientSpec.swift in Sources */,
